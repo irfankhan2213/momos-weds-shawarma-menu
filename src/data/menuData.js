@@ -47,7 +47,7 @@ export const MENU_ITEMS = [
     price: 120,
     isVeg: true,
     description: "Authentic pit-grilled paneer wrapped in freshly baked bread with garlic cream.",
-    popular: false
+    popular: true
   },
   {
     id: "shw-v-2",
@@ -56,7 +56,7 @@ export const MENU_ITEMS = [
     price: 140,
     isVeg: true,
     description: "Infused with aromatic Delhi spice marinades and special house drizzles.",
-    popular: false
+    popular: true
   },
   {
     id: "shw-v-3",
@@ -74,7 +74,7 @@ export const MENU_ITEMS = [
     price: 150,
     isVeg: true,
     description: "Smoky barbeque glazes over tender paneer cubes and crunchy salad.",
-    popular: false
+    popular: true
   },
   {
     id: "shw-v-5",
@@ -92,7 +92,7 @@ export const MENU_ITEMS = [
     price: 220,
     isVeg: true,
     description: "Indo-Chinese fusion featuring fiery chilly paneer inside a warm wrap.",
-    popular: false
+    popular: true
   },
 
   // 2. SHAWARMA (NON-VEG)
@@ -113,7 +113,7 @@ export const MENU_ITEMS = [
     price: 140,
     isVeg: false,
     description: "Tangy spices drizzled over succulent roasted chicken shawarma slices.",
-    popular: false
+    popular: true
   },
   {
     id: "shw-nv-3",
@@ -122,7 +122,7 @@ export const MENU_ITEMS = [
     price: 150,
     isVeg: false,
     description: "Rich hickory smoked BBQ sauces drenched over tender chicken shreds.",
-    popular: false
+    popular: true
   },
   {
     id: "shw-nv-4",
@@ -158,7 +158,7 @@ export const MENU_ITEMS = [
     price: 200,
     isVeg: false,
     description: "Charcoal seekh kababs tucked in warm shawarma roll with mint mayo.",
-    popular: false
+    popular: true
   },
   {
     id: "shw-nv-8",
@@ -167,7 +167,7 @@ export const MENU_ITEMS = [
     price: 160,
     isVeg: false,
     description: "Fluffy seasoned egg layer wrapped with spiced roasted chicken filling.",
-    popular: false
+    popular: true
   },
   {
     id: "shw-nv-9",
@@ -176,7 +176,7 @@ export const MENU_ITEMS = [
     price: 230,
     isVeg: false,
     description: "Double delight of egg and juicy seekh kabab wrapped together.",
-    popular: false
+    popular: true
   },
   {
     id: "shw-nv-10",
@@ -185,7 +185,7 @@ export const MENU_ITEMS = [
     price: 220,
     isVeg: false,
     description: "Spicy tossed chilly chicken wrapped in traditional shawarma flatbread.",
-    popular: false
+    popular: true
   },
 
   // 3. FULLY LOADED RUMALI ROLLS (VEG) (DELHI SPECIALITY)
@@ -196,7 +196,7 @@ export const MENU_ITEMS = [
     price: 200,
     isVeg: true,
     description: "Smoky clay-oven charred soya chaap rolled in paper-thin Rumali roti.",
-    popular: false
+    popular: true
   },
   {
     id: "rum-v-2",
@@ -214,7 +214,7 @@ export const MENU_ITEMS = [
     price: 220,
     isVeg: true,
     description: "Rustic Delhi bhatti spiced chaap with pickled onions.",
-    popular: false
+    popular: true
   },
   {
     id: "rum-v-4",
@@ -232,7 +232,7 @@ export const MENU_ITEMS = [
     price: 230,
     isVeg: true,
     description: "Charred bhatti paneer tikka wrapped with spicy green chutney.",
-    popular: false
+    popular: true
   },
   {
     id: "rum-v-6",
@@ -241,7 +241,7 @@ export const MENU_ITEMS = [
     price: 240,
     isVeg: true,
     description: "Richly spiced cocktail sauce marinated paneer in Rumali roti.",
-    popular: false
+    popular: true
   },
 
   // 4. FULLY LOADED RUMALI ROLLS (NONVEG) (DELHI SPECIALITY)
@@ -252,7 +252,7 @@ export const MENU_ITEMS = [
     price: 220,
     isVeg: false,
     description: "Charcoal grilled chicken tikka folded in buttery Rumali roti.",
-    popular: false
+    popular: true
   },
   {
     id: "rum-nv-2",
@@ -270,7 +270,7 @@ export const MENU_ITEMS = [
     price: 230,
     isVeg: false,
     description: "Dark roasted Delhi bhatti spiced chicken tikka roll.",
-    popular: false
+    popular: true
   },
   {
     id: "rum-nv-4",
@@ -288,7 +288,7 @@ export const MENU_ITEMS = [
     price: 240,
     isVeg: false,
     description: "Melt-in-mouth chicken seekh kababs wrapped with ring onions.",
-    popular: false
+    popular: true
   },
   {
     id: "rum-nv-6",
@@ -297,7 +297,7 @@ export const MENU_ITEMS = [
     price: 260,
     isVeg: false,
     description: "Rich malai glazed chicken seekh wrapped in paper-thin roti.",
-    popular: false
+    popular: true
   },
 
   // 5. KATHI ROLLS (VEG)
@@ -371,7 +371,7 @@ export const MENU_ITEMS = [
     price: 250,
     isVeg: true,
     description: "Velvety butter gravy cottage cheese roll.",
-    popular: true
+    popular: false
   },
   {
     id: "kat-v-9",
@@ -454,7 +454,7 @@ export const MENU_ITEMS = [
     price: 250,
     isVeg: false,
     description: "Creamy butter chicken gravy shredded inside a hot flaky roll.",
-    popular: true
+    popular: false
   },
   {
     id: "kat-nv-8",
@@ -549,7 +549,7 @@ export const MENU_ITEMS = [
     ],
     basePrice: 90,
     description: "Super crunchy outer coating coated with spiced crumbs and deep fried.",
-    popular: true
+    popular: false
   },
   {
     id: "mom-5",
@@ -563,7 +563,7 @@ export const MENU_ITEMS = [
     ],
     basePrice: 110,
     description: "Charcoal oven grilled momos tossed in tandoori masala and lemon butter.",
-    popular: true
+    popular: false
   },
   {
     id: "mom-6",
@@ -591,7 +591,7 @@ export const MENU_ITEMS = [
     ],
     basePrice: 110,
     description: "Rich cream, butter and cashew paste coated delicate grilled momos.",
-    popular: true
+    popular: false
   },
   {
     id: "mom-8",
@@ -619,7 +619,7 @@ export const MENU_ITEMS = [
     ],
     basePrice: 130,
     description: "Chef special intoxicating spicy tangy gravy coated momos.",
-    popular: true
+    popular: false
   },
   {
     id: "mom-10",
@@ -675,7 +675,7 @@ export const MENU_ITEMS = [
     ],
     basePrice: 140,
     description: "Cheesy baked pizza sauced momos with Italian herbs.",
-    popular: true
+    popular: false
   },
   {
     id: "mom-14",
@@ -689,7 +689,7 @@ export const MENU_ITEMS = [
     ],
     basePrice: 150,
     description: "Our signature Butter Makhni gravy poured over juicy momos.",
-    popular: true
+    popular: false
   },
   {
     id: "mom-15",
@@ -703,7 +703,7 @@ export const MENU_ITEMS = [
     ],
     basePrice: 150,
     description: "Kashmiri spices infused aromatic gravy momos.",
-    popular: true
+    popular: false
   },
 
   // 8. MWS SPECIAL DUMPLINGS
@@ -714,7 +714,7 @@ export const MENU_ITEMS = [
     price: 250,
     isVeg: true,
     description: "Exotic shiitake & button mushroom stuffed delicate midnight grey dumplings.",
-    popular: true
+    popular: false
   },
   {
     id: "dmp-2",
@@ -723,7 +723,7 @@ export const MENU_ITEMS = [
     price: 250,
     isVeg: false,
     description: "Royal spiced minced chicken wrapped in golden crystal translucent wrapper.",
-    popular: true
+    popular: false
   },
 
   // 9. TANDOORI STARTERS (VEG)
@@ -752,7 +752,7 @@ export const MENU_ITEMS = [
     price: 240,
     isVeg: true,
     description: "Delhi bhatti style smoky black pepper chaap.",
-    popular: true
+    popular: false
   },
   {
     id: "tan-v-4",
@@ -779,7 +779,7 @@ export const MENU_ITEMS = [
     price: 350,
     isVeg: true,
     description: "Special dark roast bhatti masala paneer tikka.",
-    popular: true
+    popular: false
   },
   {
     id: "tan-v-7",
@@ -898,7 +898,7 @@ export const MENU_ITEMS = [
     price: 250,
     isVeg: false,
     description: "MWS signature chef crafted melt-in-mouth chicken kababs.",
-    popular: true
+    popular: false
   },
   {
     id: "tan-nv-11",
@@ -943,7 +943,7 @@ export const MENU_ITEMS = [
     price: 320,
     isVeg: false,
     description: "Flamed intoxicated glaze over bone-in roasted chicken.",
-    popular: true
+    popular: false
   },
   {
     id: "tan-nv-16",
@@ -990,7 +990,7 @@ export const MENU_ITEMS = [
     price: 380,
     isVeg: false,
     description: "Velvety malai marinated juicy chicken wings.",
-    popular: true
+    popular: false
   },
   {
     id: "wng-3",
@@ -1019,7 +1019,7 @@ export const MENU_ITEMS = [
     price: 200,
     isVeg: true,
     description: "Crispy fried potato fingers tossed in sweet chili honey glaze & sesame.",
-    popular: true
+    popular: false
   },
   {
     id: "chn-v-2",
@@ -1055,7 +1055,7 @@ export const MENU_ITEMS = [
     price: 290,
     isVeg: true,
     description: "Cubes of cottage cheese tossed in tangy garlic chili gravy.",
-    popular: true
+    popular: false
   },
   {
     id: "chn-v-6",
@@ -1083,8 +1083,8 @@ export const MENU_ITEMS = [
     category: "chinese-nonveg",
     price: 350,
     isVeg: false,
-    description: "Classic Indo-Chinese diced chicken tossed with green chilies & capsicum.",
-    popular: true
+    description: "Classic Indo-Chinese diced chicken tossed with green chillies & capsicum.",
+    popular: false
   },
   {
     id: "chn-nv-2",
@@ -1138,7 +1138,7 @@ export const MENU_ITEMS = [
     price: 300,
     isVeg: false,
     description: "Frenched chicken winglets marinated in fiery red spices and fried.",
-    popular: true
+    popular: false
   },
   {
     id: "chn-nv-8",
@@ -1147,7 +1147,7 @@ export const MENU_ITEMS = [
     price: 350,
     isVeg: false,
     description: "Chicken lollypops tossed in spicy sweet Schezwan garlic sauce.",
-    popular: true
+    popular: false
   },
   {
     id: "chn-nv-9",
@@ -1194,7 +1194,7 @@ export const MENU_ITEMS = [
     price: 400,
     isVeg: false,
     description: "100% tender boneless chicken strips fried to gold perfection.",
-    popular: true
+    popular: false
   },
   {
     id: "crp-4",
@@ -1203,7 +1203,7 @@ export const MENU_ITEMS = [
     price: 380,
     isVeg: false,
     description: "Crispy fried chicken bites drenched in signature Bang Bang spicy mayo sauce.",
-    popular: true
+    popular: false
   },
 
   // 15. RICE BOWL
@@ -1232,7 +1232,7 @@ export const MENU_ITEMS = [
     price: 300,
     isVeg: false,
     description: "Golden fried egg ribbons and shredded spiced chicken over fragrant rice.",
-    popular: true
+    popular: false
   },
   {
     id: "rc-4",
@@ -1241,7 +1241,7 @@ export const MENU_ITEMS = [
     price: 400,
     isVeg: false,
     description: "Ultimate bowl topped with chicken gravy, seekh kababs and fried egg.",
-    popular: true
+    popular: false
   },
 
   // 16. NOODLES
@@ -1279,7 +1279,7 @@ export const MENU_ITEMS = [
     price: 240,
     isVeg: true,
     description: "Rich sesame chili oil infused noodles with crushed peanuts.",
-    popular: true
+    popular: false
   },
   {
     id: "ndl-5",
@@ -1326,7 +1326,7 @@ export const MENU_ITEMS = [
     price: 250,
     isVeg: true,
     description: "Pink sauce harmony of rich cream and tangy tomato sauce.",
-    popular: true
+    popular: false
   },
   {
     id: "pst-4",
@@ -1344,7 +1344,7 @@ export const MENU_ITEMS = [
     price: 280,
     isVeg: true,
     description: "Golden baked macaroni soaked in gooey 3-cheese sauce.",
-    popular: true
+    popular: false
   },
 
   // 18. MWS NAAN SLIDERS
@@ -1373,7 +1373,7 @@ export const MENU_ITEMS = [
     price: 280,
     isVeg: false,
     description: "Delhi's iconic butter chicken inside soft garlic naan slider buns.",
-    popular: true
+    popular: false
   },
   {
     id: "sld-4",
@@ -1420,7 +1420,7 @@ export const MENU_ITEMS = [
     price: 250,
     isVeg: true,
     description: "Golden fries smothered with hot liquid cheddar cheese & jalapenos.",
-    popular: true
+    popular: false
   },
 
   // 20. SANDWICH
@@ -1487,7 +1487,7 @@ export const MENU_ITEMS = [
     price: 250,
     isVeg: false,
     description: "Grilled spiced chicken soaked in warm melted cheese wrap.",
-    popular: true
+    popular: false
   },
   {
     id: "wrp-4",
@@ -1511,7 +1511,7 @@ export const MENU_ITEMS = [
     ],
     basePrice: 170,
     description: "Slow-cooked black lentils overnight with white butter & cream.",
-    popular: true
+    popular: false
   },
   {
     id: "mc-v-2",
@@ -1550,7 +1550,7 @@ export const MENU_ITEMS = [
     ],
     basePrice: 240,
     description: "Velvety spiced tomato gravy enriched with fresh butter.",
-    popular: true
+    popular: false
   },
   {
     id: "mc-v-5",
@@ -1709,7 +1709,7 @@ export const MENU_ITEMS = [
     ],
     basePrice: 440,
     description: "Iconic Delhi style charcoal tandoori chicken simmered in velvet butter gravy.",
-    popular: true
+    popular: false
   },
   {
     id: "mc-nv-3",
@@ -1735,7 +1735,7 @@ export const MENU_ITEMS = [
     ],
     basePrice: 500,
     description: "Earthen pot dum-cooked slow simmered spiced chicken gravy.",
-    popular: true
+    popular: false
   },
   {
     id: "mc-nv-5",
@@ -1816,7 +1816,7 @@ export const MENU_ITEMS = [
     price: 300,
     isVeg: false,
     description: "Clay-oven baked naan stuffed with minced chicken, served with butter gravy.",
-    popular: true
+    popular: false
   },
   {
     id: "spc-4",
@@ -1899,7 +1899,7 @@ export const MENU_ITEMS = [
     price: 70,
     isVeg: true,
     description: "Toasted garlic & coriander sprinkled soft tandoori naan.",
-    popular: true
+    popular: false
   },
   {
     id: "brd-9",

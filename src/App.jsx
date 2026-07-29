@@ -463,36 +463,19 @@ export default function App() {
         )}
       </main>
 
-      {/* FLOATING ACTION BUTTONS & CART BAR */}
-      <div className="floating-actions-container">
-        {/* Contact Float Buttons (WhatsApp, Call, Maps) */}
-        <div className="floating-buttons-row">
-          <a
-            href={`https://wa.me/${RESTAURANT_INFO.whatsapp}?text=Hi%20Momo%20Weds%20Shawarma,%20I%20have%20a%20query%20regarding%20the%20menu!`}
-            target="_blank"
-            rel="noreferrer"
-            className="float-btn float-btn-whatsapp"
-          >
-            <MessageCircle size={18} /> WhatsApp
-          </a>
-          <a
-            href={`tel:${RESTAURANT_INFO.phones[0]}`}
-            className="float-btn float-btn-call"
-          >
-            <Phone size={18} /> Call
-          </a>
-          <a
-            href={RESTAURANT_INFO.mapsUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="float-btn float-btn-maps"
-          >
-            <MapPin size={18} /> Location
-          </a>
-        </div>
+      {/* FIXED CALL FAB IN BOTTOM RIGHT CORNER */}
+      <a
+        href={`tel:${RESTAURANT_INFO.phones[0]}`}
+        className="fixed-call-fab"
+        title="Call Momo Weds Shawarma"
+      >
+        <Phone size={20} />
+        <span>Call</span>
+      </a>
 
-        {/* Floating Cart Order Summary Bar (if cart has items) */}
-        {cartSummary.totalItems > 0 && (
+      {/* Floating Cart Order Summary Bar (if cart has items) */}
+      {cartSummary.totalItems > 0 && (
+        <div className="cart-floating-container">
           <div className="cart-floating-bar animate-fade-in">
             <div className="cart-info">
               <span className="cart-count">{cartSummary.totalItems} Items Added</span>
@@ -502,8 +485,8 @@ export default function App() {
               <ShoppingCart size={18} /> View Order <ChevronRight size={18} />
             </button>
           </div>
-        )}
-      </div>
+        </div>
+      )}
 
       {/* ORDER CART MODAL DRAWER */}
       {isCartOpen && (

@@ -668,69 +668,54 @@
   font-size: 0.9rem;
 }
 
-/* Floating Action Bar (Contact & Cart) */
-.floating-actions-container {
+/* Fixed Call FAB (Bottom Right Corner) */
+.fixed-call-fab {
   position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
+  bottom: 24px;
+  right: 24px;
   z-index: 999;
-  width: calc(100% - 32px);
-  max-width: 520px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  pointer-events: none;
-}
-
-.floating-buttons-row {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  gap: 12px;
-  pointer-events: auto;
-}
-
-.float-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   gap: 8px;
-  padding: 12px 18px;
-  border-radius: var(--radius-full);
-  font-weight: 700;
-  font-size: 0.875rem;
-  text-decoration: none;
-  color: white;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(12px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
-  transition: all 0.25s ease;
-  flex: 1;
-}
-
-.float-btn-whatsapp {
-  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
-  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
-}
-
-.float-btn-call {
+  padding: 14px 22px;
   background: linear-gradient(135deg, #007AFF 0%, #004080 100%);
-  box-shadow: 0 6px 20px rgba(0, 122, 255, 0.4);
+  color: white;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 0.95rem;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 25px rgba(0, 122, 255, 0.5);
+  transition: all 0.25s ease;
+  backdrop-filter: blur(8px);
 }
 
-.float-btn-maps {
-  background: linear-gradient(135deg, #EA4335 0%, #B31412 100%);
-  box-shadow: 0 6px 20px rgba(234, 67, 53, 0.4);
+.fixed-call-fab:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 12px 30px rgba(0, 122, 255, 0.7);
 }
 
-.float-btn:hover {
-  transform: translateY(-3px) scale(1.02);
+/* Floating Cart Container */
+.cart-floating-container {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  z-index: 998;
+  max-width: calc(100% - 150px);
+  width: 420px;
+}
+
+@media (max-width: 640px) {
+  .cart-floating-container {
+    left: 16px;
+    bottom: 80px;
+    max-width: calc(100% - 32px);
+    width: auto;
+  }
 }
 
 /* Floating Cart Bar */
 .cart-floating-bar {
-  pointer-events: auto;
   background: linear-gradient(135deg, #1C1C24 0%, #0F0F14 100%);
   border: 1px solid var(--border-highlight);
   border-radius: var(--radius-lg);
