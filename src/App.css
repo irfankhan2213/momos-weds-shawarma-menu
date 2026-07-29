@@ -878,13 +878,13 @@
   font-weight: 800;
 }
 
-.btn-send-whatsapp {
+.btn-confirm-order {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
   width: 100%;
-  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  background: linear-gradient(135deg, var(--fire-red-light) 0%, var(--fire-red) 100%);
   color: white;
   padding: 14px;
   border-radius: var(--radius-full);
@@ -892,7 +892,7 @@
   font-weight: 800;
   border: none;
   cursor: pointer;
-  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+  box-shadow: 0 6px 20px var(--fire-red-glow);
 }
 
 /* Footer Section */
