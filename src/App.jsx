@@ -54,6 +54,8 @@ export default function App() {
   const [cart, setCart] = useState({}); // { [variantKey]: { item, variantIndex, variantName, price, quantity } }
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [itemVariants, setItemVariants] = useState({}); // { [itemId]: activeVariantIndex }
+  const [orderType, setOrderType] = useState('car'); // 'car' | 'table' | 'takeaway'
+  const [tableOrCarNo, setTableOrCarNo] = useState('');
 
   const menuRef = useRef(null);
 
@@ -198,7 +200,17 @@ export default function App() {
   const sendWhatsAppOrder = () => {
     if (cartSummary.totalItems === 0) return;
 
-    let text = `*New Order from ${RESTAURANT_INFO.name}*\n\n`;
+    let text = `*New Order from ${RESTAURANT_INFO.name}*\n`;
+
+    if (orderType === 'car') {
+      text += `🚗 *Serving:* Drive-In / Car ${tableOrCarNo ? `(Car No: ${tableOrCarNo})` : ''}\n\n`;
+    } else if (orderType === 'table') {
+      text += `🪑 *Serving:* Table Dine-In ${tableOrCarNo ? `(${tableOrCarNo})` : ''}\n\n`;
+    } else {
+      text += `🛍️ *Serving:* Takeaway ${tableOrCarNo ? `(${tableOrCarNo})` : ''}\n\n`;
+    }
+
+    text += `*Items Ordered:*\n`;
     Object.values(cart).forEach((entry, idx) => {
       const vText = entry.variantName ? ` (${entry.variantName})` : '';
       text += `${idx + 1}. *${entry.item.name}*${vText} x ${entry.quantity} - ₹${entry.price * entry.quantity}\n`;
@@ -556,6 +568,47 @@ export default function App() {
                   </div>
                 </div>
               ))}
+
+              {/* Serving Location & Car / Table Number Selector */}
+              <div className="order-option-box">
+                <div className="order-option-title">
+                  <MapPin size={14} className="text-fire-red" /> Serving Location / Order Type
+                </div>
+                <div className="order-type-pills">
+                  <button
+                    className={`type-pill-btn ${orderType === 'car' ? 'active' : ''}`}
+                    onClick={() => setOrderType('car')}
+                  >
+                    🚗 Car Drive-In
+                  </button>
+                  <button
+                    className={`type-pill-btn ${orderType === 'table' ? 'active' : ''}`}
+                    onClick={() => setOrderType('table')}
+                  >
+                    🪑 Table Dine-In
+                  </button>
+                  <button
+                    className={`type-pill-btn ${orderType === 'takeaway' ? 'active' : ''}`}
+                    onClick={() => setOrderType('takeaway')}
+                  >
+                    🛍️ Takeaway
+                  </button>
+                </div>
+
+                <input
+                  type="text"
+                  className="table-car-input"
+                  value={tableOrCarNo}
+                  onChange={(e) => setTableOrCarNo(e.target.value)}
+                  placeholder={
+                    orderType === 'car'
+                      ? 'Enter Car Number (e.g. PB10 AB 1234 - White Swift)'
+                      : orderType === 'table'
+                      ? 'Enter Table Number (e.g. Table 4)'
+                      : 'Customer Name / Notes (Optional)'
+                  }
+                />
+              </div>
             </div>
 
             <div className="modal-footer">
