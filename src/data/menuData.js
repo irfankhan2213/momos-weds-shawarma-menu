@@ -102,7 +102,7 @@ export const MENU_ITEMS = [
     category: "shawarma-nonveg",
     price: 120,
     isVeg: false,
-    image: "/images/shawarma.png",
+    image: "https://b.zmtcdn.com/data/dish_photos/2cc/292a7a7d356e4712e4e03d72ec94c2cc.jpeg",
     description: "Slow-roasted tender chicken spit-grilled to perfection, rolled with garlic sauce.",
     popular: true
   },
@@ -541,7 +541,7 @@ export const MENU_ITEMS = [
     name: "Kurkure Momos",
     category: "momos",
     isVeg: null,
-    image: "/images/momos.png",
+    image: "https://b.zmtcdn.com/data/dish_photos/458/273b147eb087e4fff389e2dac5472458.png",
     variants: [
       { name: "Veg (Half / Full)", prices: { half: 90, full: 170 }, isVeg: true },
       { name: "Paneer (Half / Full)", prices: { half: 110, full: 200 }, isVeg: true },
@@ -1702,7 +1702,7 @@ export const MENU_ITEMS = [
     name: "Delhi Spl Butter Chicken",
     category: "main-nonveg",
     isVeg: false,
-    image: "/images/butter_chicken.png",
+    image: "https://b.zmtcdn.com/data/dish_photos/403/b77f9cd9f7435f3dfd96d2e0ab03b403.jpeg",
     variants: [
       { name: "Half Portion", price: 440 },
       { name: "Full Portion", price: 800 }
