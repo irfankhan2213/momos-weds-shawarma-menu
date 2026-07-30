@@ -22,13 +22,15 @@ import {
   Salad,
   Sandwich,
   Cookie,
-  Crown
+  Crown,
+  Star,
+  ExternalLink
 } from 'lucide-react';
 import { RESTAURANT_INFO, CATEGORIES, MENU_ITEMS } from './data/menuData';
 import './App.css';
 
 // Icon mapper helper
-const getCategoryIcon = (iconName) => {
+function getCategoryIcon(iconName) {
   switch (iconName) {
     case 'Flame': return <Flame size={16} />;
     case 'Sparkles': return <Sparkles size={16} />;
@@ -43,86 +45,65 @@ const getCategoryIcon = (iconName) => {
     case 'Crown': return <Crown size={16} />;
     default: return <Utensils size={16} />;
   }
-};
+}
 
 export default function App() {
-  const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
+  const [searchQuery, setSearchQuery] = useState('');
   const [dietFilter, setDietFilter] = useState('all'); // 'all' | 'veg' | 'nonveg'
-  const [cart, setCart] = useState({}); // { [itemId_variantKey]: { item, variant, price, quantity } }
+  const [cart, setCart] = useState({}); // { [variantKey]: { item, variantIndex, variantName, price, quantity } }
   const [isCartOpen, setIsCartOpen] = useState(false);
-  const [itemVariants, setItemVariants] = useState({}); // { [itemId]: selectedVariantIndex }
+  const [itemVariants, setItemVariants] = useState({}); // { [itemId]: activeVariantIndex }
 
   const menuRef = useRef(null);
 
-  const scrollToMenu = () => {
-    if (menuRef.current) {
-      menuRef.current.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  // Handle variant selection for items with multiple prices
+  // Handle active variant selection per item
   const handleSelectVariant = (itemId, variantIdx) => {
-    setItemVariants(prev => ({
-      ...prev,
-      [itemId]: variantIdx
-    }));
+    setItemVariants(prev => ({ ...prev, [itemId]: variantIdx }));
   };
 
-  // Get current active price & variant details for an item
+  // Get active pricing/details for item considering active variant
   const getItemDetails = (item) => {
     if (item.variants && item.variants.length > 0) {
-      const selectedIdx = itemVariants[item.id] || 0;
-      const variant = item.variants[selectedIdx];
-      
-      // Check price structure (could be direct price or half/full prices)
-      let price = item.basePrice;
-      let label = variant.name;
-
-      if (typeof variant.price === 'number') {
-        price = variant.price;
-      } else if (variant.prices) {
-        price = variant.prices.full || variant.prices.half || item.basePrice;
-        label = `${variant.name} (₹${variant.prices.half} Half / ₹${variant.prices.full} Full)`;
-      }
-
-      const isVeg = variant.isVeg !== undefined ? variant.isVeg : item.isVeg;
-
+      const activeIdx = itemVariants[item.id] || 0;
+      const variant = item.variants[activeIdx];
       return {
-        variantKey: `${item.id}_v${selectedIdx}`,
-        variantName: label,
-        price,
-        isVeg
+        price: variant.price,
+        variantIndex: activeIdx,
+        variantName: variant.name,
+        variantKey: `${item.id}_${activeIdx}`,
+        isVeg: item.isVeg ?? (variant.name ? !variant.name.toLowerCase().includes('chicken') : true)
       };
     }
-
     return {
-      variantKey: item.id,
-      variantName: '',
       price: item.price,
+      variantIndex: null,
+      variantName: null,
+      variantKey: item.id,
       isVeg: item.isVeg
     };
   };
 
-  // Cart operations
+  // Add item to cart
   const addToCart = (item) => {
-    const { variantKey, variantName, price, isVeg } = getItemDetails(item);
+    const details = getItemDetails(item);
     setCart(prev => {
-      const existing = prev[variantKey];
-      const currentQty = existing ? existing.quantity : 0;
+      const existing = prev[details.variantKey];
+      const newQty = existing ? existing.quantity + 1 : 1;
       return {
         ...prev,
-        [variantKey]: {
+        [details.variantKey]: {
           item,
-          variantName,
-          price,
-          isVeg,
-          quantity: currentQty + 1
+          variantIndex: details.variantIndex,
+          variantName: details.variantName,
+          price: details.price,
+          quantity: newQty
         }
       };
     });
   };
 
+  // Remove / Decrement item in cart
   const removeFromCart = (variantKey) => {
     setCart(prev => {
       const existing = prev[variantKey];
@@ -142,7 +123,7 @@ export default function App() {
     });
   };
 
-  // Total cart calculation
+  // Compute Cart Summaries
   const cartSummary = useMemo(() => {
     let totalItems = 0;
     let totalPrice = 0;
@@ -153,48 +134,51 @@ export default function App() {
     return { totalItems, totalPrice };
   }, [cart]);
 
-  // Filtered menu items logic
+  // Filter Items
   const filteredItems = useMemo(() => {
     return MENU_ITEMS.filter(item => {
       // 1. Search Query Filter
-      if (searchQuery.trim() !== '') {
-        const query = searchQuery.toLowerCase();
-        const matchesName = item.name.toLowerCase().includes(query);
-        const matchesDesc = item.description?.toLowerCase().includes(query);
-        if (!matchesName && !matchesDesc) return false;
+      if (searchQuery.trim()) {
+        const q = searchQuery.toLowerCase().trim();
+        const matchesName = item.name.toLowerCase().includes(q);
+        const matchesDesc = item.description && item.description.toLowerCase().includes(q);
+        const matchesCat = item.category.toLowerCase().includes(q);
+        if (!matchesName && !matchesDesc && !matchesCat) return false;
       }
 
-      // 2. Category Filter
-      if (selectedCategory === 'popular') {
-        if (!item.popular) return false;
-      } else if (selectedCategory !== 'all' && item.category !== selectedCategory) {
-        return false;
-      }
-
-      // 3. Diet Filter (Veg / Non-Veg)
+      // 2. Dietary Filter
       if (dietFilter === 'veg') {
         if (item.isVeg === false) return false;
       } else if (dietFilter === 'nonveg') {
         if (item.isVeg === true) return false;
       }
 
+      // 3. Category Filter
+      if (selectedCategory === 'popular') {
+        return item.popular === true;
+      }
+      if (selectedCategory !== 'all') {
+        return item.category === selectedCategory;
+      }
+
       return true;
     });
-  }, [searchQuery, selectedCategory, dietFilter]);
+  }, [searchQuery, dietFilter, selectedCategory]);
 
-  // Group filtered items into sections
+  // Group items by Category for section display
   const groupedSections = useMemo(() => {
-    const map = {};
-    CATEGORIES.forEach(cat => {
-      if (cat.id !== 'all' && cat.id !== 'popular') {
-        map[cat.id] = [];
-      }
-    });
+    if (selectedCategory !== 'all') {
+      const catObj = CATEGORIES.find(c => c.id === selectedCategory);
+      return [{
+        category: catObj || { id: selectedCategory, name: selectedCategory, icon: 'Utensils' },
+        items: filteredItems
+      }];
+    }
 
+    const map = {};
     filteredItems.forEach(item => {
-      if (map[item.category]) {
-        map[item.category].push(item);
-      }
+      if (!map[item.category]) map[item.category] = [];
+      map[item.category].push(item);
     });
 
     return CATEGORIES.filter(cat => cat.id !== 'all' && cat.id !== 'popular' && map[cat.id] && map[cat.id].length > 0)
@@ -202,13 +186,19 @@ export default function App() {
         category: cat,
         items: map[cat.id]
       }));
-  }, [filteredItems]);
+  }, [selectedCategory, filteredItems]);
+
+  const scrollToMenu = () => {
+    if (menuRef.current) {
+      menuRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   // Generate WhatsApp Order Link
   const sendWhatsAppOrder = () => {
     if (cartSummary.totalItems === 0) return;
 
-    let text = `*New Order from Momo Weds Shawarma Digital Menu*\n\n`;
+    let text = `*New Order from ${RESTAURANT_INFO.name}*\n\n`;
     Object.values(cart).forEach((entry, idx) => {
       const vText = entry.variantName ? ` (${entry.variantName})` : '';
       text += `${idx + 1}. *${entry.item.name}*${vText} x ${entry.quantity} - ₹${entry.price * entry.quantity}\n`;
@@ -231,7 +221,7 @@ export default function App() {
           <div className="hero-overlay" />
           <div className="hero-content">
             <div className="badge-tag">
-              <Sparkles size={14} /> Delhi's #1 Street-Food Destination
+              <Star size={14} fill="#FFD700" color="#FFD700" /> {RESTAURANT_INFO.rating} ⭐ on Zomato &bull; Dugri, Ludhiana
             </div>
             <h1 className="hero-title">
               Momo <span>Weds</span> Shawarma
@@ -245,16 +235,40 @@ export default function App() {
                 <Clock size={14} /> {RESTAURANT_INFO.timing}
               </div>
               <div className="info-pill">
-                <Phone size={14} /> {RESTAURANT_INFO.phones.join(' / ')}
+                <Phone size={14} /> {RESTAURANT_INFO.phones.slice(0, 2).join(' / ')}
               </div>
               <div className="info-pill">
-                <Award size={14} /> Authentic Delhi Flavors
+                <MapPin size={14} /> {RESTAURANT_INFO.shortAddress}
               </div>
             </div>
 
-            <button className="btn-browse" onClick={scrollToMenu}>
-              <Utensils size={18} /> Browse Menu <ChevronRight size={18} />
-            </button>
+            <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', justifyContent: 'center', marginTop: '10px' }}>
+              <button className="btn-browse" onClick={scrollToMenu}>
+                <Utensils size={18} /> Browse Menu <ChevronRight size={18} />
+              </button>
+              <a
+                className="btn-zomato"
+                href={RESTAURANT_INFO.zomatoUrl}
+                target="_blank"
+                rel="noreferrer"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  background: '#CB202D',
+                  color: '#fff',
+                  padding: '14px 24px',
+                  borderRadius: '9999px',
+                  fontWeight: 700,
+                  fontSize: '0.95rem',
+                  textDecoration: 'none',
+                  boxShadow: '0 8px 20px rgba(203, 32, 45, 0.4)',
+                  transition: 'transform 0.2s ease'
+                }}
+              >
+                Order on Zomato <ExternalLink size={16} />
+              </a>
+            </div>
           </div>
         </div>
       </header>
