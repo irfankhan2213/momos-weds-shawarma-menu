@@ -361,7 +361,11 @@ export default function App() {
                             alt={item.name}
                             className="food-img"
                             loading="lazy"
-                            onError={e => { e.currentTarget.style.display = 'none'; e.currentTarget.parentElement.style.display = 'none'; }}
+                            onError={e => {
+                              const card = e.currentTarget.closest('.food-card');
+                              if (card) card.classList.add('food-card-no-img');
+                              e.currentTarget.parentElement.style.display = 'none';
+                            }}
                           />
 
                           {/* Popular Badge */}
