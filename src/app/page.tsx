@@ -25,7 +25,12 @@ import {
   Crown,
   User,
   MapPin,
-  FileText
+  FileText,
+  Star,
+  ExternalLink,
+  Car,
+  Utensils as DineIcon,
+  ShoppingBag
 } from 'lucide-react';
 import { RESTAURANT_INFO, CATEGORIES, MENU_ITEMS } from '../data/menuData';
 import { createClient } from '@/lib/supabase/client';
@@ -62,7 +67,8 @@ export default function CustomerMenuPage() {
   // Checkout Form State
   const [customerName, setCustomerName] = useState('');
   const [customerPhone, setCustomerPhone] = useState('');
-  const [orderType, setOrderType] = useState<'Dine In' | 'Takeaway'>('Dine In');
+  const [orderType, setOrderType] = useState<'Car Drive-In' | 'Dine In' | 'Takeaway'>('Car Drive-In');
+  const [carNumber, setCarNumber] = useState('');
   const [tableNumber, setTableNumber] = useState('');
   const [notes, setNotes] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -115,17 +121,17 @@ export default function CustomerMenuPage() {
   };
 
   const addToCart = (item: any) => {
-    const { variantKey, variantName, price, isVeg } = getItemDetails(item);
+    const details = getItemDetails(item);
     setCart(prev => {
-      const existing = prev[variantKey];
+      const existing = prev[details.variantKey];
       const currentQty = existing ? existing.quantity : 0;
       return {
         ...prev,
-        [variantKey]: {
+        [details.variantKey]: {
           item,
-          variantName,
-          price,
-          isVeg,
+          variantName: details.variantName,
+          price: details.price,
+          isVeg: details.isVeg,
           quantity: currentQty + 1
         }
       };
@@ -162,18 +168,13 @@ export default function CustomerMenuPage() {
   }, [cart]);
 
   const filteredItems = useMemo(() => {
-    return MENU_ITEMS.filter(item => {
+    return MENU_ITEMS.filter((item: any) => {
       if (searchQuery.trim() !== '') {
-        const query = searchQuery.toLowerCase();
+        const query = searchQuery.toLowerCase().trim();
         const matchesName = item.name.toLowerCase().includes(query);
         const matchesDesc = item.description?.toLowerCase().includes(query);
-        if (!matchesName && !matchesDesc) return false;
-      }
-
-      if (selectedCategory === 'popular') {
-        if (!item.popular) return false;
-      } else if (selectedCategory !== 'all' && item.category !== selectedCategory) {
-        return false;
+        const matchesCat = item.category?.toLowerCase().includes(query);
+        if (!matchesName && !matchesDesc && !matchesCat) return false;
       }
 
       if (dietFilter === 'veg') {
@@ -182,22 +183,29 @@ export default function CustomerMenuPage() {
         if (item.isVeg === true) return false;
       }
 
+      if (selectedCategory === 'popular') {
+        if (!item.popular) return false;
+      } else if (selectedCategory !== 'all' && item.category !== selectedCategory) {
+        return false;
+      }
+
       return true;
     });
   }, [searchQuery, selectedCategory, dietFilter]);
 
   const groupedSections = useMemo(() => {
-    const map: { [key: string]: any[] } = {};
-    CATEGORIES.forEach(cat => {
-      if (cat.id !== 'all' && cat.id !== 'popular') {
-        map[cat.id] = [];
-      }
-    });
+    if (selectedCategory !== 'all') {
+      const catObj = CATEGORIES.find(c => c.id === selectedCategory);
+      return [{
+        category: catObj || { id: selectedCategory, name: selectedCategory, icon: 'Utensils' },
+        items: filteredItems
+      }];
+    }
 
-    filteredItems.forEach(item => {
-      if (map[item.category]) {
-        map[item.category].push(item);
-      }
+    const map: { [key: string]: any[] } = {};
+    filteredItems.forEach((item: any) => {
+      if (!map[item.category]) map[item.category] = [];
+      map[item.category].push(item);
     });
 
     return CATEGORIES.filter(cat => cat.id !== 'all' && cat.id !== 'popular' && map[cat.id] && map[cat.id].length > 0)
@@ -205,7 +213,7 @@ export default function CustomerMenuPage() {
         category: cat,
         items: map[cat.id]
       }));
-  }, [filteredItems]);
+  }, [selectedCategory, filteredItems]);
 
   // Place order into Supabase
   const handlePlaceOrder = async (e: React.FormEvent) => {
@@ -220,6 +228,10 @@ export default function CustomerMenuPage() {
       setFormError('Please enter your phone number.');
       return;
     }
+    if (orderType === 'Car Drive-In' && !carNumber.trim()) {
+      setFormError('Please enter your Car Number & Model for Car Drive-In.');
+      return;
+    }
     if (orderType === 'Dine In' && !tableNumber.trim()) {
       setFormError('Please enter your Table Number for Dine In.');
       return;
@@ -230,6 +242,12 @@ export default function CustomerMenuPage() {
     try {
       const generatedOrderNumber = `#MWS-${Math.floor(1000 + Math.random() * 9000)}`;
 
+      const locationDetails = orderType === 'Car Drive-In'
+        ? `Car No: ${carNumber}`
+        : orderType === 'Dine In'
+        ? `Table No: ${tableNumber}`
+        : 'Takeaway';
+
       // 1. Insert into orders table in Supabase
       const { data: orderData, error: orderError } = await supabase
         .from('orders')
@@ -238,7 +256,7 @@ export default function CustomerMenuPage() {
           customer_name: customerName,
           customer_phone: customerPhone,
           order_type: orderType,
-          table_number: orderType === 'Dine In' ? tableNumber : null,
+          table_number: locationDetails,
           notes: notes.trim() ? notes : null,
           total: cartSummary.totalPrice,
           status: 'Pending',
@@ -286,13 +304,13 @@ export default function CustomerMenuPage() {
           <div className="hero-overlay" />
           <div className="hero-content">
             <div className="badge-tag">
-              <Sparkles size={14} /> Delhi's #1 Street-Food Destination
+              <Star size={14} fill="#FFD700" color="#FFD700" /> {RESTAURANT_INFO.rating} ⭐ on Zomato &bull; Dugri, Ludhiana
             </div>
             <h1 className="hero-title">
               Momo <span>Weds</span> Shawarma
             </h1>
             <p className="hero-tagline">
-              {RESTAURANT_INFO.tagline}
+              Ludhiana's Authentic Shawarmas, Kathi Rolls, Dumplings & Street Delights
             </p>
 
             <div className="hero-info-pills">
@@ -300,16 +318,40 @@ export default function CustomerMenuPage() {
                 <Clock size={14} /> {RESTAURANT_INFO.timing}
               </div>
               <div className="info-pill">
-                <Phone size={14} /> {RESTAURANT_INFO.phones.join(' / ')}
+                <Phone size={14} /> {RESTAURANT_INFO.phones.slice(0, 2).join(' / ')}
               </div>
               <div className="info-pill">
-                <Award size={14} /> Authentic Delhi Flavors
+                <MapPin size={14} /> {RESTAURANT_INFO.shortAddress}
               </div>
             </div>
 
-            <button className="btn-browse" onClick={scrollToMenu}>
-              <Utensils size={18} /> Browse Menu <ChevronRight size={18} />
-            </button>
+            <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', justifyContent: 'center', marginTop: '10px' }}>
+              <button className="btn-browse" onClick={scrollToMenu}>
+                <Utensils size={18} /> Browse Menu <ChevronRight size={18} />
+              </button>
+              <a
+                className="btn-zomato"
+                href={RESTAURANT_INFO.zomatoUrl}
+                target="_blank"
+                rel="noreferrer"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  background: '#CB202D',
+                  color: '#fff',
+                  padding: '14px 24px',
+                  borderRadius: '9999px',
+                  fontWeight: 700,
+                  fontSize: '0.95rem',
+                  textDecoration: 'none',
+                  boxShadow: '0 8px 20px rgba(203, 32, 45, 0.4)',
+                  transition: 'transform 0.2s ease'
+                }}
+              >
+                Order on Zomato <ExternalLink size={16} />
+              </a>
+            </div>
           </div>
         </div>
       </header>
@@ -404,48 +446,60 @@ export default function CustomerMenuPage() {
                   const qty = cartEntry ? cartEntry.quantity : 0;
 
                   return (
-                    <div key={item.id} className="food-card">
-                      <div className="card-media">
-                        {item.image ? (
+                    <div key={item.id} className={`food-card${item.image ? '' : ' food-card-no-img'}`}>
+                      {item.image && (
+                        <div className="card-media">
                           <img
                             src={item.image}
                             alt={item.name}
                             className="food-img"
                             loading="lazy"
+                            onError={(e) => {
+                              const card = (e.currentTarget as HTMLElement).closest('.food-card');
+                              if (card) card.classList.add('food-card-no-img');
+                              if (e.currentTarget.parentElement) e.currentTarget.parentElement.style.display = 'none';
+                            }}
                           />
-                        ) : (
-                          <div className="placeholder-card-img">
-                            <div className="placeholder-icon-wrap">
-                              {getCategoryIcon(category.icon)}
+
+                          {item.popular && (
+                            <div className="badge-popular">
+                              <Flame size={12} /> Popular
                             </div>
-                            <span className="placeholder-tag">{category.name}</span>
-                          </div>
-                        )}
+                          )}
 
-                        {item.popular && (
-                          <div className="badge-popular">
-                            <Flame size={12} /> Popular
-                          </div>
-                        )}
-
-                        {details.isVeg !== null && (
-                          <div className="badge-diet">
-                            {details.isVeg ? (
-                              <div className="veg-icon-box">
-                                <span className="veg-dot" />
-                              </div>
-                            ) : (
-                              <div className="nonveg-icon-box">
-                                <span className="nonveg-triangle" />
-                              </div>
-                            )}
-                          </div>
-                        )}
-                      </div>
+                          {details.isVeg !== null && (
+                            <div className="badge-diet">
+                              {details.isVeg ? (
+                                <div className="veg-icon-box">
+                                  <span className="veg-dot" />
+                                </div>
+                              ) : (
+                                <div className="nonveg-icon-box">
+                                  <span className="nonveg-triangle" />
+                                </div>
+                              )}
+                            </div>
+                          )}
+                        </div>
+                      )}
 
                       <div className="card-content">
                         <div className="card-header-line">
                           <h3 className="food-name">{item.name}</h3>
+                          {!item.image && (
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexShrink: 0 }}>
+                              {details.isVeg !== null && (
+                                details.isVeg ? (
+                                  <div className="veg-icon-box"><span className="veg-dot" /></div>
+                                ) : (
+                                  <div className="nonveg-icon-box"><span className="nonveg-triangle" /></div>
+                                )
+                              )}
+                              {item.popular && (
+                                <span style={{ fontSize: '0.65rem', background: 'var(--fire-red)', color: '#fff', padding: '2px 6px', borderRadius: '99px', fontWeight: 700 }}>Popular</span>
+                              )}
+                            </div>
+                          )}
                         </div>
 
                         {item.description && (
@@ -474,30 +528,23 @@ export default function CustomerMenuPage() {
                             <span className="price-val">₹{details.price}</span>
                           </div>
 
-                          {qty === 0 ? (
-                            <button
-                              className="btn-add-item"
-                              onClick={() => addToCart(item)}
-                            >
-                              <Plus size={16} /> ADD
-                            </button>
-                          ) : (
-                            <div className="counter-box">
-                              <button
-                                className="counter-btn"
-                                onClick={() => removeFromCart(details.variantKey)}
-                              >
-                                <Minus size={14} />
+                          <div className="action-area">
+                            {qty === 0 ? (
+                              <button className="btn-add" onClick={() => addToCart(item)}>
+                                <Plus size={16} /> ADD
                               </button>
-                              <span className="counter-val">{qty}</span>
-                              <button
-                                className="counter-btn"
-                                onClick={() => addToCart(item)}
-                              >
-                                <Plus size={14} />
-                              </button>
-                            </div>
-                          )}
+                            ) : (
+                              <div className="qty-control">
+                                <button className="qty-btn" onClick={() => removeFromCart(details.variantKey)}>
+                                  <Minus size={14} />
+                                </button>
+                                <span className="qty-val">{qty}</span>
+                                <button className="qty-btn" onClick={() => addToCart(item)}>
+                                  <Plus size={14} />
+                                </button>
+                              </div>
+                            )}
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -513,7 +560,7 @@ export default function CustomerMenuPage() {
       <a
         href={`tel:${RESTAURANT_INFO.phones[0]}`}
         className="fixed-call-fab"
-        title="Call Momo Weds Shawarma"
+        title="Call Momo Weds Shawarma Dugri"
       >
         <Phone size={20} />
         <span>Call</span>
@@ -613,20 +660,46 @@ export default function CustomerMenuPage() {
                 </div>
 
                 <div>
-                  <label style={{ fontSize: '0.85rem', color: 'var(--text-sub)', display: 'block', marginBottom: 4 }}>Order Type *</label>
-                  <div style={{ display: 'flex', gap: 10 }}>
+                  <label style={{ fontSize: '0.85rem', color: 'var(--text-sub)', display: 'block', marginBottom: 6 }}>Serving Location / Order Type *</label>
+                  <div style={{ display: 'flex', gap: 8, marginBottom: 8 }}>
+                    <button
+                      type="button"
+                      onClick={() => setOrderType('Car Drive-In')}
+                      style={{
+                        flex: 1,
+                        padding: '10px 6px',
+                        borderRadius: 8,
+                        border: orderType === 'Car Drive-In' ? '1px solid var(--fire-red-light)' : '1px solid var(--border-dark)',
+                        background: orderType === 'Car Drive-In' ? 'rgba(193, 18, 31, 0.25)' : 'var(--bg-dark)',
+                        color: orderType === 'Car Drive-In' ? 'white' : 'var(--text-muted)',
+                        fontWeight: 700,
+                        fontSize: '0.8rem',
+                        cursor: 'pointer',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        gap: 4
+                      }}
+                    >
+                      🚗 Car Drive-In
+                    </button>
                     <button
                       type="button"
                       onClick={() => setOrderType('Dine In')}
                       style={{
                         flex: 1,
-                        padding: '10px',
+                        padding: '10px 6px',
                         borderRadius: 8,
                         border: orderType === 'Dine In' ? '1px solid var(--fire-red-light)' : '1px solid var(--border-dark)',
-                        background: orderType === 'Dine In' ? 'rgba(193, 18, 31, 0.2)' : 'var(--bg-dark)',
+                        background: orderType === 'Dine In' ? 'rgba(193, 18, 31, 0.25)' : 'var(--bg-dark)',
                         color: orderType === 'Dine In' ? 'white' : 'var(--text-muted)',
                         fontWeight: 700,
-                        cursor: 'pointer'
+                        fontSize: '0.8rem',
+                        cursor: 'pointer',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        gap: 4
                       }}
                     >
                       🍽 Dine In
@@ -636,13 +709,18 @@ export default function CustomerMenuPage() {
                       onClick={() => setOrderType('Takeaway')}
                       style={{
                         flex: 1,
-                        padding: '10px',
+                        padding: '10px 6px',
                         borderRadius: 8,
                         border: orderType === 'Takeaway' ? '1px solid var(--fire-red-light)' : '1px solid var(--border-dark)',
-                        background: orderType === 'Takeaway' ? 'rgba(193, 18, 31, 0.2)' : 'var(--bg-dark)',
+                        background: orderType === 'Takeaway' ? 'rgba(193, 18, 31, 0.25)' : 'var(--bg-dark)',
                         color: orderType === 'Takeaway' ? 'white' : 'var(--text-muted)',
                         fontWeight: 700,
-                        cursor: 'pointer'
+                        fontSize: '0.8rem',
+                        cursor: 'pointer',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        gap: 4
                       }}
                     >
                       🛍 Takeaway
@@ -650,13 +728,27 @@ export default function CustomerMenuPage() {
                   </div>
                 </div>
 
+                {orderType === 'Car Drive-In' && (
+                  <div>
+                    <label style={{ fontSize: '0.85rem', color: 'var(--text-sub)', display: 'block', marginBottom: 4 }}>Car Number & Vehicle Details *</label>
+                    <input
+                      type="text"
+                      required
+                      placeholder="e.g. PB10 AB 1234 (White Swift)"
+                      value={carNumber}
+                      onChange={(e) => setCarNumber(e.target.value)}
+                      style={{ width: '100%', background: 'var(--bg-dark)', border: '1px solid var(--border-dark)', color: 'white', padding: '10px 14px', borderRadius: 8, fontSize: '0.9rem', outline: 'none' }}
+                    />
+                  </div>
+                )}
+
                 {orderType === 'Dine In' && (
                   <div>
                     <label style={{ fontSize: '0.85rem', color: 'var(--text-sub)', display: 'block', marginBottom: 4 }}>Table Number *</label>
                     <input
                       type="text"
                       required
-                      placeholder="e.g. Table 5"
+                      placeholder="e.g. Table 4"
                       value={tableNumber}
                       onChange={(e) => setTableNumber(e.target.value)}
                       style={{ width: '100%', background: 'var(--bg-dark)', border: '1px solid var(--border-dark)', color: 'white', padding: '10px 14px', borderRadius: 8, fontSize: '0.9rem', outline: 'none' }}
@@ -713,10 +805,13 @@ export default function CustomerMenuPage() {
       <footer className="app-footer">
         <h2 className="footer-logo">Momo <span>Weds</span> Shawarma</h2>
         <p className="footer-text">
-          Delhi's Premier Destination for Shawarmas, Kathi Rolls, Dumplings & Tandoori Delights.
+          Ludhiana's Premier Destination for Shawarmas, Kathi Rolls, Dumplings & Tandoori Delights.
+        </p>
+        <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', marginTop: 4 }}>
+          📍 Booth 71C, B-28-1402/71, Urban Estate, Phase 2, Dugri, Ludhiana
         </p>
         <p className="footer-copyright">
-          © {new Date().getFullYear()} Momo Weds Shawarma. All rights reserved.
+          © {new Date().getFullYear()} Momo Weds Shawarma Dugri. All rights reserved.
         </p>
       </footer>
     </div>
