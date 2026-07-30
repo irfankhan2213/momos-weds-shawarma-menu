@@ -46,7 +46,7 @@ export const MENU_ITEMS = [
   {
     id: "shw-v-1",
     name: "Classic Paneer Shawarma",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/classic_paneer_shawarma.jpg",
+    image: null,
     category: "shawarma-veg",
     price: 120,
     isVeg: true,
@@ -66,7 +66,7 @@ export const MENU_ITEMS = [
   {
     id: "shw-v-3",
     name: "Korean Paneer Shawarma",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/korean_paneer_shawarma.jpg",
+    image: null,
     category: "shawarma-veg",
     price: 150,
     isVeg: true,
@@ -76,7 +76,7 @@ export const MENU_ITEMS = [
   {
     id: "shw-v-4",
     name: "BBQ Paneer Shawarma",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/bbq_paneer_shawarma.jpg",
+    image: null,
     category: "shawarma-veg",
     price: 150,
     isVeg: true,
@@ -86,7 +86,7 @@ export const MENU_ITEMS = [
   {
     id: "shw-v-5",
     name: "Chef's Garlic Paneer Shawarma",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/chef_s_garlic_paneer_shawarma.jpg",
+    image: null,
     category: "shawarma-veg",
     price: 150,
     isVeg: true,
@@ -96,7 +96,7 @@ export const MENU_ITEMS = [
   {
     id: "shw-v-6",
     name: "Chilly Paneer Shawarma",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/classic_paneer_shawarma.jpg",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/chilli_soya_shawarma.jpg",
     category: "shawarma-veg",
     price: 220,
     isVeg: true,
@@ -128,7 +128,7 @@ export const MENU_ITEMS = [
   {
     id: "shw-nv-3",
     name: "BBQ Chicken Shawarma",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/bbq_chicken_shawarma.jpg",
+    image: null,
     category: "shawarma-nonveg",
     price: 150,
     isVeg: false,
@@ -138,7 +138,7 @@ export const MENU_ITEMS = [
   {
     id: "shw-nv-4",
     name: "Korean Chicken Shawarma",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/korean_chicken_shawarma.jpg",
+    image: null,
     category: "shawarma-nonveg",
     price: 150,
     isVeg: false,
@@ -148,7 +148,7 @@ export const MENU_ITEMS = [
   {
     id: "shw-nv-5",
     name: "Chef's Garlic Chicken Shawarma",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/chef_s_garlic_chicken_shawarma.jpg",
+    image: null,
     category: "shawarma-nonveg",
     price: 150,
     isVeg: false,
@@ -168,7 +168,7 @@ export const MENU_ITEMS = [
   {
     id: "shw-nv-7",
     name: "Chicken Kabab Shawarma",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/kurkure_chicken_shawarma.jpg",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/chilli_chicken_shawarma.jpg",
     category: "shawarma-nonveg",
     price: 200,
     isVeg: false,
@@ -1527,7 +1527,7 @@ export const MENU_ITEMS = [
   {
     id: "sld-1",
     name: "Shahi Paneer Slider",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shahi_paneer_with_flaky_layer_parantha.jpg",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shahi_paneer.jpg",
     category: "naan-sliders",
     price: 250,
     isVeg: true,
@@ -1621,7 +1621,7 @@ export const MENU_ITEMS = [
   {
     id: "snd-2",
     name: "Cheesy Paneer Sandwich",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shahi_paneer_with_flaky_layer_parantha.jpg",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/paneer_tikka_roll.jpg",
     category: "sandwich",
     price: 200,
     isVeg: true,
@@ -1828,9 +1828,9 @@ export const MENU_ITEMS = [
     isVeg: true,
     variants: [
       { name: "Half Portion",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shami_tikka.jpg", price: 180 },
+    image: null, price: 180 },
       { name: "Full Portion",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shami_tikka.jpg", price: 320 }
+    image: null, price: 320 }
     ],
     basePrice: 180,
     description: "Street-style griddle fried spicy chaap masala gravy.",
@@ -1844,9 +1844,9 @@ export const MENU_ITEMS = [
     isVeg: true,
     variants: [
       { name: "Half Portion",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shami_tikka.jpg", price: 180 },
+    image: null, price: 180 },
       { name: "Full Portion",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shami_tikka.jpg", price: 320 }
+    image: null, price: 320 }
     ],
     basePrice: 180,
     description: "Spiced soya chaap cooked in traditional Kadhai gravy.",
@@ -1876,9 +1876,9 @@ export const MENU_ITEMS = [
     isVeg: true,
     variants: [
       { name: "Half Portion",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shami_tikka.jpg", price: 200 },
+    image: null, price: 200 },
       { name: "Full Portion",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shami_tikka.jpg", price: 350 }
+    image: null, price: 350 }
     ],
     basePrice: 200,
     description: "Rich buttery tomato gravy with tender soya chaap.",
@@ -1892,9 +1892,9 @@ export const MENU_ITEMS = [
     isVeg: true,
     variants: [
       { name: "Half Portion",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shami_tikka.jpg", price: 220 },
+    image: null, price: 220 },
       { name: "Full Portion",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shami_tikka.jpg", price: 370 }
+    image: null, price: 370 }
     ],
     basePrice: 220,
     description: "Thick coarse spiced gravy with soft soya chaap.",
@@ -2049,7 +2049,7 @@ export const MENU_ITEMS = [
   {
     id: "spc-1",
     name: "Veg Keema Naan with Gravy",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shahi_paneer_with_flaky_layer_parantha.jpg",
+    image: null,
     category: "mws-specials",
     price: 280,
     isVeg: true,
@@ -2069,7 +2069,7 @@ export const MENU_ITEMS = [
   {
     id: "spc-3",
     name: "Chicken Naan with Gravy",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/butter_chicken_with_1_paratha.jpg",
+    image: null,
     category: "mws-specials",
     price: 300,
     isVeg: false,

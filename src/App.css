@@ -374,12 +374,13 @@
   background: var(--bg-card-hover);
 }
 
-/* No-image card: compact horizontal row */
+/* No-image card: compact horizontal row with small height */
 .food-card-no-img {
   flex-direction: row;
   align-items: center;
-  padding: 14px 16px;
+  padding: 10px 14px;
   gap: 12px;
+  min-height: 60px;
 }
 
 .food-card-no-img:hover {
@@ -389,25 +390,43 @@
 .food-card-no-img .card-content {
   flex: 1;
   padding: 0;
-  gap: 4px;
+  gap: 2px;
 }
 
 .food-card-no-img .food-name {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.25;
 }
 
 .food-card-no-img .food-desc {
   -webkit-line-clamp: 1;
-  font-size: 0.78rem;
+  font-size: 0.75rem;
+  line-height: 1.3;
+}
+
+.food-card-no-img .variant-picker {
+  margin-top: 2px;
+  padding: 2px;
+}
+
+.food-card-no-img .variant-btn {
+  padding: 3px 6px;
+  font-size: 0.725rem;
 }
 
 .food-card-no-img .card-footer {
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 6px;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
   padding-top: 0;
   margin-top: 0;
-  min-width: 80px;
+  min-width: auto;
+  flex-shrink: 0;
+}
+
+.food-card-no-img .price-val {
+  font-size: 0.95rem;
 }
 
 .card-media {

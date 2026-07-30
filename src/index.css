@@ -84,7 +84,19 @@ body {
 /* Base utility classes */
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1140px;
   margin: 0 auto;
-  padding: 0 16px;
+  padding: 0 20px;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding: 0 28px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 36px;
+  }
 }
