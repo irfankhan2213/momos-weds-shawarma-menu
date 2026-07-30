@@ -168,7 +168,7 @@ export const MENU_ITEMS = [
   {
     id: "shw-nv-7",
     name: "Chicken Kabab Shawarma",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/classic_paneer_shawarma.jpg",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/kurkure_chicken_shawarma.jpg",
     category: "shawarma-nonveg",
     price: 200,
     isVeg: false,
@@ -178,7 +178,7 @@ export const MENU_ITEMS = [
   {
     id: "shw-nv-8",
     name: "Special Egg Shawarma",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/classic_paneer_shawarma.jpg",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/classic_chicken_shawarma.jpg",
     category: "shawarma-nonveg",
     price: 160,
     isVeg: false,
@@ -188,7 +188,7 @@ export const MENU_ITEMS = [
   {
     id: "shw-nv-9",
     name: "Special Egg Kabab Shawarma",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/classic_paneer_shawarma.jpg",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/classic_chicken_shawarma.jpg",
     category: "shawarma-nonveg",
     price: 230,
     isVeg: false,
@@ -198,7 +198,7 @@ export const MENU_ITEMS = [
   {
     id: "shw-nv-10",
     name: "Chilly Chicken Shawarma",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/classic_paneer_shawarma.jpg",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/chilli_chicken_shawarma.jpg",
     category: "shawarma-nonveg",
     price: 220,
     isVeg: false,
@@ -272,7 +272,7 @@ export const MENU_ITEMS = [
   {
     id: "rum-nv-1",
     name: "Tandoori Tikka Roll",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/paneer_tikka_roll.jpg",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/tandoori_chicken_roll.png",
     category: "rumali-nonveg",
     price: 220,
     isVeg: false,
@@ -302,7 +302,7 @@ export const MENU_ITEMS = [
   {
     id: "rum-nv-4",
     name: "Sharabi Tikka Roll",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/paneer_tikka_roll.jpg",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/sharabi_chicken_roll.jpg",
     category: "rumali-nonveg",
     price: 250,
     isVeg: false,
@@ -344,7 +344,7 @@ export const MENU_ITEMS = [
   {
     id: "kat-v-2",
     name: "Authentic Paneer Roll",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/paneer_tikka_roll.jpg",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/malai_paneer_roll.jpg",
     category: "kathi-veg",
     price: 200,
     isVeg: true,
@@ -354,7 +354,7 @@ export const MENU_ITEMS = [
   {
     id: "kat-v-3",
     name: "Soya Makhni Roll",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/paneer_tikka_roll.jpg",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/soya_makhani_roll.jpg",
     category: "kathi-veg",
     price: 190,
     isVeg: true,
@@ -364,7 +364,7 @@ export const MENU_ITEMS = [
   {
     id: "kat-v-4",
     name: "Afghani Soya Roll",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/paneer_tikka_roll.jpg",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/achari_chaap_roll.png",
     category: "kathi-veg",
     price: 200,
     isVeg: true,
@@ -374,7 +374,7 @@ export const MENU_ITEMS = [
   {
     id: "kat-v-5",
     name: "Bhatti Soya Roll",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/paneer_tikka_roll.jpg",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/bhatti_chaap_roll.jpg",
     category: "kathi-veg",
     price: 220,
     isVeg: true,
@@ -404,7 +404,7 @@ export const MENU_ITEMS = [
   {
     id: "kat-v-8",
     name: "Paneer Makhni Roll",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/paneer_tikka_roll.jpg",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/paneer_makhani_roll.jpg",
     category: "kathi-veg",
     price: 250,
     isVeg: true,
@@ -859,7 +859,7 @@ export const MENU_ITEMS = [
   {
     id: "tan-v-3",
     name: "Spl Bhatti Chaap",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shami_tikka.jpg",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/special_bhatti_chaap.jpg",
     category: "tandoori-veg",
     price: 240,
     isVeg: true,
@@ -889,7 +889,7 @@ export const MENU_ITEMS = [
   {
     id: "tan-v-6",
     name: "Spl Bhatti Paneer Tikka",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shami_tikka.jpg",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/special_bhatti_paneer_tikka.jpg",
     category: "tandoori-veg",
     price: 350,
     isVeg: true,
@@ -899,7 +899,7 @@ export const MENU_ITEMS = [
   {
     id: "tan-v-7",
     name: "Sharabi Paneer Tikka",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shami_tikka.jpg",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/sharabi_chicken_tikka.png",
     category: "tandoori-veg",
     price: 400,
     isVeg: true,
@@ -961,7 +961,7 @@ export const MENU_ITEMS = [
   {
     id: "tan-nv-4",
     name: "Lehnsuni Tikka",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shami_tikka.jpg",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/lehsuni_tikka.jpg",
     category: "tandoori-nonveg",
     price: 420,
     isVeg: false,
@@ -981,7 +981,7 @@ export const MENU_ITEMS = [
   {
     id: "tan-nv-6",
     name: "Sharabi Tikka",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shami_tikka.jpg",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/sharabi_chicken_tikka.png",
     category: "tandoori-nonveg",
     price: 420,
     isVeg: false,
@@ -991,7 +991,7 @@ export const MENU_ITEMS = [
   {
     id: "tan-nv-7",
     name: "Peri Peri Tikka",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shami_tikka.jpg",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/lasooni_tikka.png",
     category: "tandoori-nonveg",
     price: 420,
     isVeg: false,
@@ -1001,7 +1001,7 @@ export const MENU_ITEMS = [
   {
     id: "tan-nv-8",
     name: "Banjara Tikka",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shami_tikka.jpg",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/lasooni_tikka.png",
     category: "tandoori-nonveg",
     price: 450,
     isVeg: false,
@@ -1011,7 +1011,7 @@ export const MENU_ITEMS = [
   {
     id: "tan-nv-9",
     name: "Chicken Kabab",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shami_tikka.jpg",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/chicken_galouti_kabab_3_pieces.png",
     category: "tandoori-nonveg",
     price: 200,
     isVeg: false,
@@ -1021,7 +1021,7 @@ export const MENU_ITEMS = [
   {
     id: "tan-nv-10",
     name: "Spl Handmade Kabab (Must Try)",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shami_tikka.jpg",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/chicken_galouti_kabab_3_pieces.png",
     category: "tandoori-nonveg",
     price: 250,
     isVeg: false,
@@ -1071,7 +1071,7 @@ export const MENU_ITEMS = [
   {
     id: "tan-nv-15",
     name: "Spl Sharabi Chicken (With Bone)",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shami_tikka.jpg",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/bhatti_chicken.jpg",
     category: "tandoori-nonveg",
     price: 320,
     isVeg: false,
@@ -1081,7 +1081,7 @@ export const MENU_ITEMS = [
   {
     id: "tan-nv-16",
     name: "Tandoori Tangri",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shami_tikka.jpg",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/tandoori_chicken.jpg",
     category: "tandoori-nonveg",
     price: 300,
     isVeg: false,
@@ -1091,7 +1091,7 @@ export const MENU_ITEMS = [
   {
     id: "tan-nv-17",
     name: "Afghani Tangri",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/chicken_tandoori_momos.png",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/afghani_chicken.jpg",
     category: "tandoori-nonveg",
     price: 330,
     isVeg: false,
@@ -1101,7 +1101,7 @@ export const MENU_ITEMS = [
   {
     id: "tan-nv-18",
     name: "Sharabi Tangri",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shami_tikka.jpg",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/sharabi_chicken_tikka.png",
     category: "tandoori-nonveg",
     price: 350,
     isVeg: false,
@@ -1143,7 +1143,7 @@ export const MENU_ITEMS = [
   {
     id: "wng-4",
     name: "Bhatti Wings",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/hot_garlic_wings.png",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/barbeque_flavour_chicken_wings.jpg",
     category: "chicken-wings",
     price: 380,
     isVeg: false,
@@ -1155,7 +1155,7 @@ export const MENU_ITEMS = [
   {
     id: "chn-v-1",
     name: "Honey Chilly Potato",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/special_manchurian.jpg",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/honey_chilli_potato.png",
     category: "chinese-veg",
     price: 200,
     isVeg: true,
@@ -1175,7 +1175,7 @@ export const MENU_ITEMS = [
   {
     id: "chn-v-3",
     name: "Honey Manchurian",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/special_manchurian.jpg",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/hong_kong_style_manchurian.png",
     category: "chinese-veg",
     price: 280,
     isVeg: true,
@@ -1195,7 +1195,7 @@ export const MENU_ITEMS = [
   {
     id: "chn-v-5",
     name: "Cheese Chilly",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/special_manchurian.jpg",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/special_cheese_chilli.jpg",
     category: "chinese-veg",
     price: 290,
     isVeg: true,
@@ -1205,7 +1205,7 @@ export const MENU_ITEMS = [
   {
     id: "chn-v-6",
     name: "Paneer 65",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/special_manchurian.jpg",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/mushroom_chilli.jpg",
     category: "chinese-veg",
     price: 300,
     isVeg: true,
@@ -1215,7 +1215,7 @@ export const MENU_ITEMS = [
   {
     id: "chn-v-7",
     name: "Veg Spring Roll",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/paneer_tikka_roll.jpg",
+    image: null,
     category: "chinese-veg",
     price: 200,
     isVeg: true,
@@ -1257,7 +1257,7 @@ export const MENU_ITEMS = [
   {
     id: "chn-nv-4",
     name: "Lemon Chicken",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/lemon_chicken_wings.jpg",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/honey_chilli_chicken.jpg",
     category: "chinese-nonveg",
     price: 380,
     isVeg: false,
@@ -1297,7 +1297,7 @@ export const MENU_ITEMS = [
   {
     id: "chn-nv-8",
     name: "Drums of Heaven",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/special_manchurian.jpg",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/chicken_popcorn.png",
     category: "chinese-nonveg",
     price: 350,
     isVeg: false,
@@ -1307,7 +1307,7 @@ export const MENU_ITEMS = [
   {
     id: "chn-nv-9",
     name: "Chicken Spring Roll",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/chicken_tikka_roll.jpg",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/veg_pan_fried_momos.jpg",
     category: "chinese-nonveg",
     price: 250,
     isVeg: false,
@@ -1317,7 +1317,7 @@ export const MENU_ITEMS = [
   {
     id: "chn-nv-10",
     name: "Flavoured Chicken Sausages",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/chilli_chicken.jpg",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/chicken_popcorn.png",
     category: "chinese-nonveg",
     price: 260,
     isVeg: false,
@@ -1329,7 +1329,7 @@ export const MENU_ITEMS = [
   {
     id: "crp-1",
     name: "MWS Crispy Wings",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/hot_garlic_wings.png",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/special_chicken_bang_bang.png",
     category: "crispy-chicken",
     price: 220,
     isVeg: false,
@@ -1339,7 +1339,7 @@ export const MENU_ITEMS = [
   {
     id: "crp-2",
     name: "MWS Juicy Chicken",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/special_chicken_bang_bang.png",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/chicken_flame_stix.png",
     category: "crispy-chicken",
     price: 350,
     isVeg: false,
@@ -1349,7 +1349,7 @@ export const MENU_ITEMS = [
   {
     id: "crp-3",
     name: "MWS Crispy Boneless",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/special_chicken_bang_bang.png",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/peri_peri_chicken_popcorn.png",
     category: "crispy-chicken",
     price: 400,
     isVeg: false,
@@ -1371,7 +1371,7 @@ export const MENU_ITEMS = [
   {
     id: "rc-1",
     name: "Chilly Garlic Fried Rice",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/dragon_fried_rice.jpg",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/wok_tossed_fried_rice.jpg",
     category: "rice-bowl",
     price: 200,
     isVeg: true,
@@ -1381,7 +1381,7 @@ export const MENU_ITEMS = [
   {
     id: "rc-2",
     name: "Chef Special Fried Rice",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/dragon_fried_rice.jpg",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/sizzling_fried_rice.jpg",
     category: "rice-bowl",
     price: 220,
     isVeg: true,
@@ -1391,7 +1391,7 @@ export const MENU_ITEMS = [
   {
     id: "rc-3",
     name: "Golden Egg Chicken Rice",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/wok_tossed_chicken_fried_rice.jpg",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/sizzling_chicken_egg_fried_rice.jpg",
     category: "rice-bowl",
     price: 300,
     isVeg: false,
@@ -1401,7 +1401,7 @@ export const MENU_ITEMS = [
   {
     id: "rc-4",
     name: "MWS Special Rice Bowl",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/dragon_fried_rice.jpg",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/exotic_oriental_veggies_stir_fry_bowl.jpg",
     category: "rice-bowl",
     price: 400,
     isVeg: false,
@@ -1423,7 +1423,7 @@ export const MENU_ITEMS = [
   {
     id: "ndl-2",
     name: "Chilly Garlic Noodles",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/spl_veggie_noodles.jpg",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/chilli_garlic_noodles.png",
     category: "noodles",
     price: 200,
     isVeg: true,
@@ -1433,7 +1433,7 @@ export const MENU_ITEMS = [
   {
     id: "ndl-3",
     name: "Schezwan Noodles",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/schezwan_chicken.jpg",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/chilli_garlic_noodles.png",
     category: "noodles",
     price: 220,
     isVeg: true,
@@ -1453,7 +1453,7 @@ export const MENU_ITEMS = [
   {
     id: "ndl-5",
     name: "MWS Special Noodles",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/spl_veggie_noodles.jpg",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/spl_dan_dan_noodles.png",
     category: "noodles",
     price: 230,
     isVeg: true,
@@ -1463,7 +1463,7 @@ export const MENU_ITEMS = [
   {
     id: "ndl-6",
     name: "Add Chicken and Egg",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/egg_chicken_noodles.jpg",
+    image: null,
     category: "noodles",
     price: 100,
     isVeg: false,
@@ -1527,7 +1527,7 @@ export const MENU_ITEMS = [
   {
     id: "sld-1",
     name: "Shahi Paneer Slider",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shahi_paneer.jpg",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shahi_paneer_with_flaky_layer_parantha.jpg",
     category: "naan-sliders",
     price: 250,
     isVeg: true,
@@ -1567,7 +1567,7 @@ export const MENU_ITEMS = [
   {
     id: "sld-5",
     name: "Rara Chicken Slider",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/butter_chicken_with_1_paratha.jpg",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/sweet_sour_chicken_combo.jpg",
     category: "naan-sliders",
     price: 280,
     isVeg: false,
@@ -1577,7 +1577,7 @@ export const MENU_ITEMS = [
   {
     id: "sld-6",
     name: "Kali Mirch Chicken Slider",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/butter_chicken_with_1_paratha.jpg",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/sweet_sour_chicken_combo.jpg",
     category: "naan-sliders",
     price: 280,
     isVeg: false,
@@ -1611,7 +1611,7 @@ export const MENU_ITEMS = [
   {
     id: "snd-1",
     name: "Wild Mushroom & Cheese Sandwich",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/malai_paneer_roll.jpg",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/mushroom_chilli.jpg",
     category: "sandwich",
     price: 180,
     isVeg: true,
@@ -1621,7 +1621,7 @@ export const MENU_ITEMS = [
   {
     id: "snd-2",
     name: "Cheesy Paneer Sandwich",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shahi_paneer.jpg",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shahi_paneer_with_flaky_layer_parantha.jpg",
     category: "sandwich",
     price: 200,
     isVeg: true,
@@ -1631,7 +1631,7 @@ export const MENU_ITEMS = [
   {
     id: "snd-3",
     name: "Chicken & Cheese Sandwich",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/chicken_tikka_roll.jpg",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/butter_chicken_roll.jpg",
     category: "sandwich",
     price: 220,
     isVeg: false,
@@ -1653,7 +1653,7 @@ export const MENU_ITEMS = [
   {
     id: "wrp-1",
     name: "The Melted Mushroom Wrap",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/paneer_tikka_roll.jpg",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/malai_paneer_roll.jpg",
     category: "wraps",
     price: 200,
     isVeg: true,
@@ -1673,7 +1673,7 @@ export const MENU_ITEMS = [
   {
     id: "wrp-3",
     name: "The Melted Chicken Wrap",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/chicken_tikka_roll.jpg",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/crispy_chicken_roll.jpg",
     category: "wraps",
     price: 250,
     isVeg: false,
@@ -1683,7 +1683,7 @@ export const MENU_ITEMS = [
   {
     id: "wrp-4",
     name: "Peri Peri Chicken Wrap",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/chicken_tikka_roll.jpg",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/butter_chicken_roll.jpg",
     category: "wraps",
     price: 250,
     isVeg: false,
@@ -1759,7 +1759,7 @@ export const MENU_ITEMS = [
   {
     id: "mc-v-5",
     name: "Kadhai Paneer",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shahi_paneer.jpg",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/kadai_paneer.jpg",
     category: "main-veg",
     isVeg: true,
     variants: [
@@ -1807,7 +1807,7 @@ export const MENU_ITEMS = [
   {
     id: "mc-v-8",
     name: "Spl Rogan Josh Paneer",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shahi_paneer.jpg",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/rara_paneer.jpg",
     category: "main-veg",
     isVeg: true,
     variants: [
@@ -1823,7 +1823,7 @@ export const MENU_ITEMS = [
   {
     id: "mc-v-9",
     name: "Tawa Masala Chaap",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shami_tikka.jpg",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/malai_chaap.jpg",
     category: "main-veg",
     isVeg: true,
     variants: [
@@ -1839,7 +1839,7 @@ export const MENU_ITEMS = [
   {
     id: "mc-v-10",
     name: "Kadhai Chaap",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shami_tikka.jpg",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/tandoori_chaap.jpg",
     category: "main-veg",
     isVeg: true,
     variants: [
@@ -1871,7 +1871,7 @@ export const MENU_ITEMS = [
   {
     id: "mc-v-12",
     name: "Makhni Chaap",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shami_tikka.jpg",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/malai_chaap.jpg",
     category: "main-veg",
     isVeg: true,
     variants: [
@@ -1887,7 +1887,7 @@ export const MENU_ITEMS = [
   {
     id: "mc-v-13",
     name: "Rara Gravy Chaap",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shami_tikka.jpg",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/special_bhatti_chaap.jpg",
     category: "main-veg",
     isVeg: true,
     variants: [
@@ -1903,7 +1903,7 @@ export const MENU_ITEMS = [
   {
     id: "mc-v-14",
     name: "Spl Veg Keema Maeat",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shahi_paneer.jpg",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/spl_veggie_noodles.jpg",
     category: "main-veg",
     isVeg: true,
     variants: [
@@ -1921,7 +1921,7 @@ export const MENU_ITEMS = [
   {
     id: "mc-nv-1",
     name: "Chicken Curry",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shahi_paneer.jpg",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/butter_chicken_with_1_paratha.jpg",
     category: "main-nonveg",
     isVeg: false,
     variants: [
@@ -1951,7 +1951,7 @@ export const MENU_ITEMS = [
   {
     id: "mc-nv-3",
     name: "Kadhai Chicken",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shahi_paneer.jpg",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/butter_chicken_with_1_paratha.jpg",
     category: "main-nonveg",
     isVeg: false,
     variants: [
@@ -1967,7 +1967,7 @@ export const MENU_ITEMS = [
   {
     id: "mc-nv-4",
     name: "Matki Chicken",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shahi_paneer.jpg",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/sweet_sour_chicken_combo.jpg",
     category: "main-nonveg",
     isVeg: false,
     variants: [
@@ -1983,7 +1983,7 @@ export const MENU_ITEMS = [
   {
     id: "mc-nv-5",
     name: "Kali Mirch Chicken",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shahi_paneer.jpg",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/honey_chilli_chicken.jpg",
     category: "main-nonveg",
     isVeg: false,
     variants: [
@@ -1999,7 +1999,7 @@ export const MENU_ITEMS = [
   {
     id: "mc-nv-6",
     name: "Rara Chicken",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shahi_paneer.jpg",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/sweet_sour_chicken_combo.jpg",
     category: "main-nonveg",
     isVeg: false,
     variants: [
@@ -2015,7 +2015,7 @@ export const MENU_ITEMS = [
   {
     id: "mc-nv-7",
     name: "Spl Rogan Josh Chicken",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shahi_paneer.jpg",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/butter_chicken_with_1_paratha.jpg",
     category: "main-nonveg",
     isVeg: false,
     variants: [
@@ -2031,7 +2031,7 @@ export const MENU_ITEMS = [
   {
     id: "mc-nv-8",
     name: "Cream Chicken",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shahi_paneer.jpg",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/butter_chicken_with_1_paratha.jpg",
     category: "main-nonveg",
     isVeg: false,
     variants: [
@@ -2059,7 +2059,7 @@ export const MENU_ITEMS = [
   {
     id: "spc-2",
     name: "Veg Keema Ricebowl",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/dragon_fried_rice.jpg",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/wok_tossed_fried_rice.jpg",
     category: "mws-specials",
     price: 250,
     isVeg: true,
@@ -2069,7 +2069,7 @@ export const MENU_ITEMS = [
   {
     id: "spc-3",
     name: "Chicken Naan with Gravy",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shahi_paneer_with_flaky_layer_parantha.jpg",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/butter_chicken_with_1_paratha.jpg",
     category: "mws-specials",
     price: 300,
     isVeg: false,
@@ -2079,7 +2079,7 @@ export const MENU_ITEMS = [
   {
     id: "spc-4",
     name: "Chicken Keema Ricebowl",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/wok_tossed_chicken_fried_rice.jpg",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/chef_special_chicken_egg_fried_rice.jpg",
     category: "mws-specials",
     price: 270,
     isVeg: false,
@@ -2091,7 +2091,7 @@ export const MENU_ITEMS = [
   {
     id: "brd-1",
     name: "Tawa Roti",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shahi_paneer_with_flaky_layer_parantha.jpg",
+    image: null,
     category: "breads",
     price: 20,
     isVeg: true,
@@ -2101,7 +2101,7 @@ export const MENU_ITEMS = [
   {
     id: "brd-2",
     name: "Tandoori Roti",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shahi_paneer_with_flaky_layer_parantha.jpg",
+    image: null,
     category: "breads",
     price: 25,
     isVeg: true,
@@ -2111,7 +2111,7 @@ export const MENU_ITEMS = [
   {
     id: "brd-3",
     name: "Butter Roti",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shahi_paneer_with_flaky_layer_parantha.jpg",
+    image: null,
     category: "breads",
     price: 25,
     isVeg: true,
@@ -2121,7 +2121,7 @@ export const MENU_ITEMS = [
   {
     id: "brd-4",
     name: "Cream Roti",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shahi_paneer_with_flaky_layer_parantha.jpg",
+    image: null,
     category: "breads",
     price: 30,
     isVeg: true,
@@ -2131,7 +2131,7 @@ export const MENU_ITEMS = [
   {
     id: "brd-5",
     name: "Missi Roti",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shahi_paneer_with_flaky_layer_parantha.jpg",
+    image: null,
     category: "breads",
     price: 40,
     isVeg: true,
@@ -2141,7 +2141,7 @@ export const MENU_ITEMS = [
   {
     id: "brd-6",
     name: "Garlic Roti",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shahi_paneer_with_flaky_layer_parantha.jpg",
+    image: null,
     category: "breads",
     price: 40,
     isVeg: true,
@@ -2151,7 +2151,7 @@ export const MENU_ITEMS = [
   {
     id: "brd-7",
     name: "Butter Naan",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shahi_paneer_with_flaky_layer_parantha.jpg",
+    image: null,
     category: "breads",
     price: 60,
     isVeg: true,
@@ -2161,7 +2161,7 @@ export const MENU_ITEMS = [
   {
     id: "brd-8",
     name: "Garlic Naan",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shahi_paneer_with_flaky_layer_parantha.jpg",
+    image: null,
     category: "breads",
     price: 70,
     isVeg: true,
@@ -2171,7 +2171,7 @@ export const MENU_ITEMS = [
   {
     id: "brd-9",
     name: "Laccha Parantha",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shahi_paneer_with_flaky_layer_parantha.jpg",
+    image: null,
     category: "breads",
     price: 50,
     isVeg: true,
@@ -2181,7 +2181,7 @@ export const MENU_ITEMS = [
   {
     id: "brd-10",
     name: "Lal Mirch Parantha",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shahi_paneer_with_flaky_layer_parantha.jpg",
+    image: null,
     category: "breads",
     price: 60,
     isVeg: true,
@@ -2191,7 +2191,7 @@ export const MENU_ITEMS = [
   {
     id: "brd-11",
     name: "Hari Mirch Parantha",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shahi_paneer_with_flaky_layer_parantha.jpg",
+    image: null,
     category: "breads",
     price: 60,
     isVeg: true,
@@ -2201,7 +2201,7 @@ export const MENU_ITEMS = [
   {
     id: "brd-12",
     name: "Masala Rumali",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/paneer_tikka_roll.jpg",
+    image: null,
     category: "breads",
     price: 35,
     isVeg: true,
@@ -2211,7 +2211,7 @@ export const MENU_ITEMS = [
   {
     id: "brd-13",
     name: "Rumali Roti",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/paneer_tikka_roll.jpg",
+    image: null,
     category: "breads",
     price: 25,
     isVeg: true,
@@ -2221,7 +2221,7 @@ export const MENU_ITEMS = [
   {
     id: "brd-14",
     name: "Kulcha",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shahi_paneer_with_flaky_layer_parantha.jpg",
+    image: null,
     category: "breads",
     price: 30,
     isVeg: true,
@@ -2231,7 +2231,7 @@ export const MENU_ITEMS = [
   {
     id: "brd-15",
     name: "Masala Kulcha",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shahi_paneer_with_flaky_layer_parantha.jpg",
+    image: null,
     category: "breads",
     price: 40,
     isVeg: true,

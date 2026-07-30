@@ -352,52 +352,61 @@ export default function App() {
                   const qty = cartEntry ? cartEntry.quantity : 0;
 
                   return (
-                    <div key={item.id} className="food-card">
-                      {/* Card Media Header */}
-                      <div className="card-media">
-                        {item.image ? (
+                    <div key={item.id} className={`food-card${item.image ? '' : ' food-card-no-img'}`}>
+                      {/* Card Media Header — only shown when image exists */}
+                      {item.image && (
+                        <div className="card-media">
                           <img
                             src={item.image}
                             alt={item.name}
                             className="food-img"
                             loading="lazy"
+                            onError={e => { e.currentTarget.style.display = 'none'; e.currentTarget.parentElement.style.display = 'none'; }}
                           />
-                        ) : (
-                          <div className="placeholder-card-img">
-                            <div className="placeholder-icon-wrap">
-                              {getCategoryIcon(category.icon)}
+
+                          {/* Popular Badge */}
+                          {item.popular && (
+                            <div className="badge-popular">
+                              <Flame size={12} /> Popular
                             </div>
-                            <span className="placeholder-tag">{category.name}</span>
-                          </div>
-                        )}
+                          )}
 
-                        {/* Popular Badge */}
-                        {item.popular && (
-                          <div className="badge-popular">
-                            <Flame size={12} /> Popular
-                          </div>
-                        )}
-
-                        {/* Dietary Badge */}
-                        {details.isVeg !== null && (
-                          <div className="badge-diet">
-                            {details.isVeg ? (
-                              <div className="veg-icon-box">
-                                <span className="veg-dot" />
-                              </div>
-                            ) : (
-                              <div className="nonveg-icon-box">
-                                <span className="nonveg-triangle" />
-                              </div>
-                            )}
-                          </div>
-                        )}
-                      </div>
+                          {/* Dietary Badge */}
+                          {details.isVeg !== null && (
+                            <div className="badge-diet">
+                              {details.isVeg ? (
+                                <div className="veg-icon-box">
+                                  <span className="veg-dot" />
+                                </div>
+                              ) : (
+                                <div className="nonveg-icon-box">
+                                  <span className="nonveg-triangle" />
+                                </div>
+                              )}
+                            </div>
+                          )}
+                        </div>
+                      )}
 
                       {/* Card Content */}
                       <div className="card-content">
                         <div className="card-header-line">
                           <h3 className="food-name">{item.name}</h3>
+                          {/* Inline badges for no-image cards */}
+                          {!item.image && (
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexShrink: 0 }}>
+                              {details.isVeg !== null && (
+                                details.isVeg ? (
+                                  <div className="veg-icon-box"><span className="veg-dot" /></div>
+                                ) : (
+                                  <div className="nonveg-icon-box"><span className="nonveg-triangle" /></div>
+                                )
+                              )}
+                              {item.popular && (
+                                <span style={{ fontSize: '0.65rem', background: 'var(--fire-red)', color: '#fff', padding: '2px 6px', borderRadius: '99px', fontWeight: 700 }}>Popular</span>
+                              )}
+                            </div>
+                          )}
                         </div>
 
                         {item.description && (
