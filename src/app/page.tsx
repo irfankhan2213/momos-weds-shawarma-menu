@@ -463,7 +463,7 @@ export default function CustomerMenuPage() {
 
                           {item.popular && (
                             <div className="badge-popular">
-                              <Flame size={12} /> Popular
+                              <Flame size={12} /> Chef's Special
                             </div>
                           )}
 
@@ -496,7 +496,7 @@ export default function CustomerMenuPage() {
                                 )
                               )}
                               {item.popular && (
-                                <span style={{ fontSize: '0.65rem', background: 'var(--fire-red)', color: '#fff', padding: '2px 6px', borderRadius: '99px', fontWeight: 700 }}>Popular</span>
+                                <span style={{ fontSize: '0.65rem', background: 'var(--fire-red)', color: '#fff', padding: '2px 6px', borderRadius: '99px', fontWeight: 700 }}>Special</span>
                               )}
                             </div>
                           )}

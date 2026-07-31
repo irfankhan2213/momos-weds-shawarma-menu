@@ -16,7 +16,7 @@ export const CATEGORIES = [
   { id: "all", name: "All Items", icon: "Flame",
     popular: false
   },
-  { id: "popular", name: "🔥 Popular", icon: "Sparkles",
+  { id: "popular", name: "🔥 Chef's Specials", icon: "Sparkles",
     popular: false
   },
   { id: "shawarma-veg", name: "Shawarma (Veg)", icon: "UtensilsCrossed",
