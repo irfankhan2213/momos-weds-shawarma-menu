@@ -13,33 +13,87 @@ export const RESTAURANT_INFO = {
 };
 
 export const CATEGORIES = [
-  { id: "all", name: "All Items", icon: "Flame" },
-  { id: "popular", name: "🔥 Popular", icon: "Sparkles" },
-  { id: "shawarma-veg", name: "Shawarma (Veg)", icon: "UtensilsCrossed" },
-  { id: "shawarma-nonveg", name: "Shawarma (Non-Veg)", icon: "Utensils" },
-  { id: "rumali-veg", name: "Rumali Rolls (Veg)", icon: "Scroll" },
-  { id: "rumali-nonveg", name: "Rumali Rolls (Non-Veg)", icon: "Scroll" },
-  { id: "kathi-veg", name: "Kathi Rolls (Veg)", icon: "Wrap" },
-  { id: "kathi-nonveg", name: "Kathi Rolls (Non-Veg)", icon: "Wrap" },
-  { id: "momos", name: "Momo Starters", icon: "Soup" },
-  { id: "mws-dumplings", name: "MWS Special Dumplings", icon: "Sparkles" },
-  { id: "tandoori-veg", name: "Tandoori Starters (Veg)", icon: "Flame" },
-  { id: "tandoori-nonveg", name: "Tandoori Starters (Non-Veg)", icon: "Flame" },
-  { id: "chicken-wings", name: "Chicken Wings", icon: "Drumstick" },
-  { id: "chinese-veg", name: "Chinese (Veg)", icon: "Salad" },
-  { id: "chinese-nonveg", name: "Chinese (Non-Veg)", icon: "Drumstick" },
-  { id: "crispy-chicken", name: "Crispy Chicken", icon: "Sparkles" },
-  { id: "rice-bowl", name: "Rice Bowl", icon: "BowlFood" },
-  { id: "noodles", name: "Noodles", icon: "Utensils" },
-  { id: "pasta", name: "Pasta", icon: "Utensils" },
-  { id: "naan-sliders", name: "MWS Naan Sliders", icon: "Sandwich" },
-  { id: "fries", name: "Fries", icon: "Utensils" },
-  { id: "sandwich", name: "Sandwich", icon: "Sandwich" },
-  { id: "wraps", name: "Wraps", icon: "Wrap" },
-  { id: "main-veg", name: "Main Course (Veg)", icon: "Soup" },
-  { id: "main-nonveg", name: "Main Course (Non-Veg)", icon: "Soup" },
-  { id: "mws-specials", name: "MWS Specials", icon: "Crown" },
-  { id: "breads", name: "Breads", icon: "Cookie" }
+  { id: "all", name: "All Items", icon: "Flame",
+    popular: false
+  },
+  { id: "popular", name: "🔥 Popular", icon: "Sparkles",
+    popular: false
+  },
+  { id: "shawarma-veg", name: "Shawarma (Veg)", icon: "UtensilsCrossed",
+    popular: false
+  },
+  { id: "shawarma-nonveg", name: "Shawarma (Non-Veg)", icon: "Utensils",
+    popular: false
+  },
+  { id: "rumali-veg", name: "Rumali Rolls (Veg)", icon: "Scroll",
+    popular: false
+  },
+  { id: "rumali-nonveg", name: "Rumali Rolls (Non-Veg)", icon: "Scroll",
+    popular: false
+  },
+  { id: "kathi-veg", name: "Kathi Rolls (Veg)", icon: "Wrap",
+    popular: false
+  },
+  { id: "kathi-nonveg", name: "Kathi Rolls (Non-Veg)", icon: "Wrap",
+    popular: false
+  },
+  { id: "momos", name: "Momo Starters", icon: "Soup",
+    popular: false
+  },
+  { id: "mws-dumplings", name: "MWS Special Dumplings", icon: "Sparkles",
+    popular: false
+  },
+  { id: "tandoori-veg", name: "Tandoori Starters (Veg)", icon: "Flame",
+    popular: false
+  },
+  { id: "tandoori-nonveg", name: "Tandoori Starters (Non-Veg)", icon: "Flame",
+    popular: false
+  },
+  { id: "chicken-wings", name: "Chicken Wings", icon: "Drumstick",
+    popular: false
+  },
+  { id: "chinese-veg", name: "Chinese (Veg)", icon: "Salad",
+    popular: false
+  },
+  { id: "chinese-nonveg", name: "Chinese (Non-Veg)", icon: "Drumstick",
+    popular: false
+  },
+  { id: "crispy-chicken", name: "Crispy Chicken", icon: "Sparkles",
+    popular: false
+  },
+  { id: "rice-bowl", name: "Rice Bowl", icon: "BowlFood",
+    popular: false
+  },
+  { id: "noodles", name: "Noodles", icon: "Utensils",
+    popular: false
+  },
+  { id: "pasta", name: "Pasta", icon: "Utensils",
+    popular: false
+  },
+  { id: "naan-sliders", name: "MWS Naan Sliders", icon: "Sandwich",
+    popular: false
+  },
+  { id: "fries", name: "Fries", icon: "Utensils",
+    popular: false
+  },
+  { id: "sandwich", name: "Sandwich", icon: "Sandwich",
+    popular: false
+  },
+  { id: "wraps", name: "Wraps", icon: "Wrap",
+    popular: false
+  },
+  { id: "main-veg", name: "Main Course (Veg)", icon: "Soup",
+    popular: false
+  },
+  { id: "main-nonveg", name: "Main Course (Non-Veg)", icon: "Soup",
+    popular: false
+  },
+  { id: "mws-specials", name: "MWS Specials", icon: "Crown",
+    popular: false
+  },
+  { id: "breads", name: "Breads", icon: "Cookie",
+    popular: false
+  }
 ];
 
 export const MENU_ITEMS = [
@@ -55,7 +109,7 @@ export const MENU_ITEMS = [
     price: 120,
     isVeg: true,
     description: "Authentic pit-grilled paneer wrapped in freshly baked bread with garlic cream.",
-    popular: true
+    popular: false
   },
   {
     id: "shw-v-2",
@@ -65,7 +119,7 @@ export const MENU_ITEMS = [
     price: 140,
     isVeg: true,
     description: "Infused with aromatic Delhi spice marinades and special house drizzles.",
-    popular: true
+    popular: false
   },
   {
     id: "shw-v-3",
@@ -75,7 +129,7 @@ export const MENU_ITEMS = [
     price: 150,
     isVeg: true,
     description: "Sweet & spicy Korean Gochujang glaze with pickled veggies and grilled paneer.",
-    popular: true
+    popular: false
   },
   {
     id: "shw-v-4",
@@ -85,7 +139,7 @@ export const MENU_ITEMS = [
     price: 150,
     isVeg: true,
     description: "Smoky barbeque glazes over tender paneer cubes and crunchy salad.",
-    popular: true
+    popular: false
   },
   {
     id: "shw-v-5",
@@ -117,7 +171,7 @@ export const MENU_ITEMS = [
     isVeg: false,
     image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/classic_chicken_shawarma.jpg",
     description: "Slow-roasted tender chicken spit-grilled to perfection, rolled with garlic sauce.",
-    popular: true
+    popular: false
   },
   {
     id: "shw-nv-2",
@@ -137,7 +191,7 @@ export const MENU_ITEMS = [
     price: 150,
     isVeg: false,
     description: "Rich hickory smoked BBQ sauces drenched over tender chicken shreds.",
-    popular: true
+    popular: false
   },
   {
     id: "shw-nv-4",
@@ -147,7 +201,7 @@ export const MENU_ITEMS = [
     price: 150,
     isVeg: false,
     description: "Fiery & sweet Korean chilli glazed chicken wrap with sesame hint.",
-    popular: true
+    popular: false
   },
   {
     id: "shw-nv-5",
@@ -167,7 +221,7 @@ export const MENU_ITEMS = [
     price: 180,
     isVeg: false,
     description: "Ultra-crunchy fried outer shell surrounding hot spiced chicken shawarma.",
-    popular: true
+    popular: false
   },
   {
     id: "shw-nv-7",
@@ -177,7 +231,7 @@ export const MENU_ITEMS = [
     price: 200,
     isVeg: false,
     description: "Charcoal seekh kababs tucked in warm shawarma roll with mint mayo.",
-    popular: true
+    popular: false
   },
   {
     id: "shw-nv-8",
@@ -187,7 +241,7 @@ export const MENU_ITEMS = [
     price: 160,
     isVeg: false,
     description: "Fluffy seasoned egg layer wrapped with spiced roasted chicken filling.",
-    popular: true
+    popular: false
   },
   {
     id: "shw-nv-9",
@@ -197,7 +251,7 @@ export const MENU_ITEMS = [
     price: 230,
     isVeg: false,
     description: "Double delight of egg and juicy seekh kabab wrapped together.",
-    popular: true
+    popular: false
   },
   {
     id: "shw-nv-10",
@@ -207,7 +261,7 @@ export const MENU_ITEMS = [
     price: 220,
     isVeg: false,
     description: "Spicy tossed chilly chicken wrapped in traditional shawarma flatbread.",
-    popular: true
+    popular: false
   },
 
   // 3. FULLY LOADED RUMALI ROLLS (VEG) (DELHI SPECIALITY)
@@ -219,7 +273,7 @@ export const MENU_ITEMS = [
     price: 200,
     isVeg: true,
     description: "Smoky clay-oven charred soya chaap rolled in paper-thin Rumali roti.",
-    popular: true
+    popular: false
   },
   {
     id: "rum-v-2",
@@ -239,7 +293,7 @@ export const MENU_ITEMS = [
     price: 220,
     isVeg: true,
     description: "Rustic Delhi bhatti spiced chaap with pickled onions.",
-    popular: true
+    popular: false
   },
   {
     id: "rum-v-4",
@@ -249,7 +303,7 @@ export const MENU_ITEMS = [
     price: 240,
     isVeg: true,
     description: "Our secret house recipe rum-infused gravy chaap in delicate Rumali.",
-    popular: true
+    popular: false
   },
   {
     id: "rum-v-5",
@@ -259,7 +313,7 @@ export const MENU_ITEMS = [
     price: 230,
     isVeg: true,
     description: "Charred bhatti paneer tikka wrapped with spicy green chutney.",
-    popular: true
+    popular: false
   },
   {
     id: "rum-v-6",
@@ -269,7 +323,7 @@ export const MENU_ITEMS = [
     price: 240,
     isVeg: true,
     description: "Richly spiced cocktail sauce marinated paneer in Rumali roti.",
-    popular: true
+    popular: false
   },
 
   // 4. FULLY LOADED RUMALI ROLLS (NONVEG) (DELHI SPECIALITY)
@@ -281,7 +335,7 @@ export const MENU_ITEMS = [
     price: 220,
     isVeg: false,
     description: "Charcoal grilled chicken tikka folded in buttery Rumali roti.",
-    popular: true
+    popular: false
   },
   {
     id: "rum-nv-2",
@@ -291,7 +345,7 @@ export const MENU_ITEMS = [
     price: 230,
     isVeg: false,
     description: "Creamy cardamom spiced malai chicken tikka wrapped in fresh Rumali.",
-    popular: true
+    popular: false
   },
   {
     id: "rum-nv-3",
@@ -301,7 +355,7 @@ export const MENU_ITEMS = [
     price: 230,
     isVeg: false,
     description: "Dark roasted Delhi bhatti spiced chicken tikka roll.",
-    popular: true
+    popular: false
   },
   {
     id: "rum-nv-4",
@@ -311,7 +365,7 @@ export const MENU_ITEMS = [
     price: 250,
     isVeg: false,
     description: "Signature flamed chicken tikka roll with rich tangy sauces.",
-    popular: true
+    popular: false
   },
   {
     id: "rum-nv-5",
@@ -321,7 +375,7 @@ export const MENU_ITEMS = [
     price: 240,
     isVeg: false,
     description: "Melt-in-mouth chicken seekh kababs wrapped with ring onions.",
-    popular: true
+    popular: false
   },
   {
     id: "rum-nv-6",
@@ -331,7 +385,7 @@ export const MENU_ITEMS = [
     price: 260,
     isVeg: false,
     description: "Rich malai glazed chicken seekh wrapped in paper-thin roti.",
-    popular: true
+    popular: false
   },
 
   // 5. KATHI ROLLS (VEG)
@@ -495,7 +549,7 @@ export const MENU_ITEMS = [
     price: 230,
     isVeg: false,
     description: "Intense bhatti roasted chicken shreds in crispy roll.",
-    popular: false
+    popular: true
   },
   {
     id: "kat-nv-7",
@@ -525,7 +579,7 @@ export const MENU_ITEMS = [
     price: 250,
     isVeg: false,
     description: "Deep fried crunch chicken tenders loaded in Kathi wrap.",
-    popular: false
+    popular: true
   },
   {
     id: "kat-nv-10",
@@ -557,15 +611,16 @@ export const MENU_ITEMS = [
     isVeg: null, // multi-variant
     variants: [
       { name: "Veg (Half / Full)",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/paneer_steamed_momos.jpg", prices: { half: 60, full: 100 }, isVeg: true },
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/paneer_steamed_momos.jpg", prices: { half: 60, full: 100,
+    popular: false
+  }, isVeg: true },
       { name: "Paneer (Half / Full)",
     image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/paneer_steamed_momos.jpg", prices: { half: 70, full: 120 }, isVeg: true },
       { name: "Chicken (Half / Full)",
     image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/paneer_steamed_momos.jpg", prices: { half: 80, full: 130 }, isVeg: false }
     ],
     basePrice: 60,
-    description: "Traditional authentic steamed dumplings served with red hot sauce and garlic mayo.",
-    popular: false
+    description: "Traditional authentic steamed dumplings served with red hot sauce and garlic mayo."
   },
   {
     id: "mom-2",
@@ -575,15 +630,16 @@ export const MENU_ITEMS = [
     isVeg: null,
     variants: [
       { name: "Veg (Half / Full)",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/chicken_pan_fried_momos.jpg", prices: { half: 80, full: 130 }, isVeg: true },
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/chicken_pan_fried_momos.jpg", prices: { half: 80, full: 130,
+    popular: false
+  }, isVeg: true },
       { name: "Paneer (Half / Full)",
     image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/chicken_pan_fried_momos.jpg", prices: { half: 90, full: 140 }, isVeg: true },
       { name: "Chicken (Half / Full)",
     image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/chicken_pan_fried_momos.jpg", prices: { half: 100, full: 160 }, isVeg: false }
     ],
     basePrice: 80,
-    description: "Golden crispy fried momos served piping hot.",
-    popular: false
+    description: "Golden crispy fried momos served piping hot."
   },
   {
     id: "mom-3",
@@ -593,15 +649,16 @@ export const MENU_ITEMS = [
     isVeg: null,
     variants: [
       { name: "Veg (Half / Full)",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/chicken_pan_fried_momos.jpg", prices: { half: 90, full: 150 }, isVeg: true },
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/chicken_pan_fried_momos.jpg", prices: { half: 90, full: 150,
+    popular: false
+  }, isVeg: true },
       { name: "Paneer (Half / Full)",
     image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/chicken_pan_fried_momos.jpg", prices: { half: 100, full: 180 }, isVeg: true },
       { name: "Chicken (Half / Full)",
     image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/chicken_pan_fried_momos.jpg", prices: { half: 110, full: 200 }, isVeg: false }
     ],
     basePrice: 90,
-    description: "Wok-tossed pan-fried dumplings with spicy chili glaze.",
-    popular: false
+    description: "Wok-tossed pan-fried dumplings with spicy chili glaze."
   },
   {
     id: "mom-4",
@@ -610,13 +667,14 @@ export const MENU_ITEMS = [
     isVeg: null,
     image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/chicken_kurkure_momos.jpg",
     variants: [
-      { name: "Veg (Half / Full)", prices: { half: 90, full: 170 }, isVeg: true },
+      { name: "Veg (Half / Full)", prices: { half: 90, full: 170,
+    popular: false
+  }, isVeg: true },
       { name: "Paneer (Half / Full)", prices: { half: 110, full: 200 }, isVeg: true },
       { name: "Chicken (Half / Full)", prices: { half: 120, full: 220 }, isVeg: false }
     ],
     basePrice: 90,
-    description: "Super crunchy outer coating coated with spiced crumbs and deep fried.",
-    popular: false
+    description: "Super crunchy outer coating coated with spiced crumbs and deep fried."
   },
   {
     id: "mom-5",
@@ -626,15 +684,16 @@ export const MENU_ITEMS = [
     isVeg: null,
     variants: [
       { name: "Veg (Half / Full)",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/chicken_tandoori_momos.png", prices: { half: 110, full: 200 }, isVeg: true },
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/chicken_tandoori_momos.png", prices: { half: 110, full: 200,
+    popular: false
+  }, isVeg: true },
       { name: "Paneer (Half / Full)",
     image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/chicken_tandoori_momos.png", prices: { half: 120, full: 220 }, isVeg: true },
       { name: "Chicken (Half / Full)",
     image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/chicken_tandoori_momos.png", prices: { half: 130, full: 240 }, isVeg: false }
     ],
     basePrice: 110,
-    description: "Charcoal oven grilled momos tossed in tandoori masala and lemon butter.",
-    popular: false
+    description: "Charcoal oven grilled momos tossed in tandoori masala and lemon butter."
   },
   {
     id: "mom-6",
@@ -644,15 +703,16 @@ export const MENU_ITEMS = [
     isVeg: null,
     variants: [
       { name: "Veg (Half / Full)",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/paneer_steamed_momos.jpg", prices: { half: 120, full: 220 }, isVeg: true },
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/paneer_steamed_momos.jpg", prices: { half: 120, full: 220,
+    popular: false
+  }, isVeg: true },
       { name: "Paneer (Half / Full)",
     image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/paneer_steamed_momos.jpg", prices: { half: 130, full: 230 }, isVeg: true },
       { name: "Chicken (Half / Full)",
     image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/paneer_steamed_momos.jpg", prices: { half: 140, full: 240 }, isVeg: false }
     ],
     basePrice: 120,
-    description: "Tossed in fiery African peri peri spice blend.",
-    popular: false
+    description: "Tossed in fiery African peri peri spice blend."
   },
   {
     id: "mom-7",
@@ -662,15 +722,16 @@ export const MENU_ITEMS = [
     isVeg: null,
     variants: [
       { name: "Veg (Half / Full)",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/chicken_afghani_momos.jpg", prices: { half: 110, full: 210 }, isVeg: true },
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/chicken_afghani_momos.jpg", prices: { half: 110, full: 210,
+    popular: false
+  }, isVeg: true },
       { name: "Paneer (Half / Full)",
     image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/chicken_afghani_momos.jpg", prices: { half: 120, full: 240 }, isVeg: true },
       { name: "Chicken (Half / Full)",
     image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/chicken_afghani_momos.jpg", prices: { half: 140, full: 240 }, isVeg: false }
     ],
     basePrice: 110,
-    description: "Rich cream, butter and cashew paste coated delicate grilled momos.",
-    popular: false
+    description: "Rich cream, butter and cashew paste coated delicate grilled momos."
   },
   {
     id: "mom-8",
@@ -680,15 +741,16 @@ export const MENU_ITEMS = [
     isVeg: null,
     variants: [
       { name: "Veg (Half / Full)",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/veg_tandoori_momos.png", prices: { half: 120, full: 220 }, isVeg: true },
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/veg_tandoori_momos.png", prices: { half: 120, full: 220,
+    popular: false
+  }, isVeg: true },
       { name: "Paneer (Half / Full)",
     image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/veg_tandoori_momos.png", prices: { half: 140, full: 250 }, isVeg: true },
       { name: "Chicken (Half / Full)",
     image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/veg_tandoori_momos.png", prices: { half: 150, full: 250 }, isVeg: false }
     ],
     basePrice: 120,
-    description: "Robust Bhatti smoked momos with fiery black pepper undertones.",
-    popular: false
+    description: "Robust Bhatti smoked momos with fiery black pepper undertones."
   },
   {
     id: "mom-9",
@@ -698,15 +760,16 @@ export const MENU_ITEMS = [
     isVeg: null,
     variants: [
       { name: "Veg (Half / Full)",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/paneer_steamed_momos.jpg", prices: { half: 130, full: 250 }, isVeg: true },
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/paneer_steamed_momos.jpg", prices: { half: 130, full: 250,
+    popular: false
+  }, isVeg: true },
       { name: "Paneer (Half / Full)",
     image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/paneer_steamed_momos.jpg", prices: { half: 140, full: 240 }, isVeg: true },
       { name: "Chicken (Half / Full)",
     image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/paneer_steamed_momos.jpg", prices: { half: 150, full: 250 }, isVeg: false }
     ],
     basePrice: 130,
-    description: "Chef special intoxicating spicy tangy gravy coated momos.",
-    popular: false
+    description: "Chef special intoxicating spicy tangy gravy coated momos."
   },
   {
     id: "mom-10",
@@ -716,15 +779,16 @@ export const MENU_ITEMS = [
     isVeg: null,
     variants: [
       { name: "Veg (Half / Full)",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/chicken_hot_garlic_momos.png", prices: { half: 140, full: 240 }, isVeg: true },
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/chicken_hot_garlic_momos.png", prices: { half: 140, full: 240,
+    popular: false
+  }, isVeg: true },
       { name: "Paneer (Half / Full)",
     image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/chicken_hot_garlic_momos.png", prices: { half: 150, full: 250 }, isVeg: true },
       { name: "Chicken (Half / Full)",
     image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/chicken_hot_garlic_momos.png", prices: { half: 150, full: 250 }, isVeg: false }
     ],
     basePrice: 140,
-    description: "Sizzling garlic chili gravy smothered momos.",
-    popular: false
+    description: "Sizzling garlic chili gravy smothered momos."
   },
   {
     id: "mom-11",
@@ -734,15 +798,16 @@ export const MENU_ITEMS = [
     isVeg: null,
     variants: [
       { name: "Veg (Half / Full)",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/chicken_schezwan_momos.jpg", prices: { half: 140, full: 240 }, isVeg: true },
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/chicken_schezwan_momos.jpg", prices: { half: 140, full: 240,
+    popular: false
+  }, isVeg: true },
       { name: "Paneer (Half / Full)",
     image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/chicken_schezwan_momos.jpg", prices: { half: 150, full: 250 }, isVeg: true },
       { name: "Chicken (Half / Full)",
     image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/chicken_schezwan_momos.jpg", prices: { half: 150, full: 250 }, isVeg: false }
     ],
     basePrice: 140,
-    description: "Spicy Sichuan pepper wok tossed momos.",
-    popular: false
+    description: "Spicy Sichuan pepper wok tossed momos."
   },
   {
     id: "mom-12",
@@ -752,15 +817,16 @@ export const MENU_ITEMS = [
     isVeg: null,
     variants: [
       { name: "Veg (Half / Full)",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/paneer_steamed_momos.jpg", prices: { half: 140, full: 240 }, isVeg: true },
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/paneer_steamed_momos.jpg", prices: { half: 140, full: 240,
+    popular: false
+  }, isVeg: true },
       { name: "Paneer (Half / Full)",
     image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/paneer_steamed_momos.jpg", prices: { half: 150, full: 250 }, isVeg: true },
       { name: "Chicken (Half / Full)",
     image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/paneer_steamed_momos.jpg", prices: { half: 150, full: 250 }, isVeg: false }
     ],
     basePrice: 140,
-    description: "Sweet honey and spicy red chili glaze tossed momos.",
-    popular: false
+    description: "Sweet honey and spicy red chili glaze tossed momos."
   },
   {
     id: "mom-13",
@@ -770,15 +836,16 @@ export const MENU_ITEMS = [
     isVeg: null,
     variants: [
       { name: "Veg (Half / Full)",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/paneer_steamed_momos.jpg", prices: { half: 150, full: 250 }, isVeg: true },
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/paneer_steamed_momos.jpg", prices: { half: 150, full: 250,
+    popular: false
+  }, isVeg: true },
       { name: "Paneer (Half / Full)",
     image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/paneer_steamed_momos.jpg", prices: { half: 150, full: 250 }, isVeg: true },
       { name: "Chicken (Half / Full)",
     image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/paneer_steamed_momos.jpg", prices: { half: 140, full: 240 }, isVeg: false }
     ],
     basePrice: 140,
-    description: "Cheesy baked pizza sauced momos with Italian herbs.",
-    popular: false
+    description: "Cheesy baked pizza sauced momos with Italian herbs."
   },
   {
     id: "mom-14",
@@ -788,15 +855,16 @@ export const MENU_ITEMS = [
     isVeg: null,
     variants: [
       { name: "Veg (Half / Full)",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/paneer_steamed_momos.jpg", prices: { half: 150, full: 260 }, isVeg: true },
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/paneer_steamed_momos.jpg", prices: { half: 150, full: 260,
+    popular: true
+  }, isVeg: true },
       { name: "Paneer (Half / Full)",
     image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/paneer_steamed_momos.jpg", prices: { half: 150, full: 270 }, isVeg: true },
       { name: "Chicken (Half / Full)",
     image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/paneer_steamed_momos.jpg", prices: { half: 150, full: 270 }, isVeg: false }
     ],
     basePrice: 150,
-    description: "Our signature Butter Makhni gravy poured over juicy momos.",
-    popular: false
+    description: "Our signature Butter Makhni gravy poured over juicy momos."
   },
   {
     id: "mom-15",
@@ -806,15 +874,16 @@ export const MENU_ITEMS = [
     isVeg: null,
     variants: [
       { name: "Veg (Half / Full)",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/chicken_rogan_josh_gravy_momos.png", prices: { half: 150, full: 270 }, isVeg: true },
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/chicken_rogan_josh_gravy_momos.png", prices: { half: 150, full: 270,
+    popular: false
+  }, isVeg: true },
       { name: "Paneer (Half / Full)",
     image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/chicken_rogan_josh_gravy_momos.png", prices: { half: 150, full: 270 }, isVeg: true },
       { name: "Chicken (Half / Full)",
     image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/chicken_rogan_josh_gravy_momos.png", prices: { half: 150, full: 270 }, isVeg: false }
     ],
     basePrice: 150,
-    description: "Kashmiri spices infused aromatic gravy momos.",
-    popular: false
+    description: "Kashmiri spices infused aromatic gravy momos."
   },
 
   // 8. MWS SPECIAL DUMPLINGS
@@ -858,7 +927,7 @@ export const MENU_ITEMS = [
     price: 230,
     isVeg: true,
     description: "Mild cashew cream marinated juicy soya chaap.",
-    popular: false
+    popular: true
   },
   {
     id: "tan-v-3",
@@ -960,7 +1029,7 @@ export const MENU_ITEMS = [
     price: 400,
     isVeg: false,
     description: "Old Delhi bhatti style charcoal roasted spicy chicken tikka.",
-    popular: false
+    popular: true
   },
   {
     id: "tan-nv-4",
@@ -990,7 +1059,7 @@ export const MENU_ITEMS = [
     price: 420,
     isVeg: false,
     description: "Fiery cocktail sauce glazed charcoal chicken tikka.",
-    popular: false
+    popular: true
   },
   {
     id: "tan-nv-7",
@@ -1030,7 +1099,7 @@ export const MENU_ITEMS = [
     price: 250,
     isVeg: false,
     description: "MWS signature chef crafted melt-in-mouth chicken kababs.",
-    popular: false
+    popular: true
   },
   {
     id: "tan-nv-11",
@@ -1204,7 +1273,7 @@ export const MENU_ITEMS = [
     price: 290,
     isVeg: true,
     description: "Cubes of cottage cheese tossed in tangy garlic chili gravy.",
-    popular: false
+    popular: true
   },
   {
     id: "chn-v-6",
@@ -1236,7 +1305,7 @@ export const MENU_ITEMS = [
     price: 350,
     isVeg: false,
     description: "Classic Indo-Chinese diced chicken tossed with green chillies & capsicum.",
-    popular: false
+    popular: true
   },
   {
     id: "chn-nv-2",
@@ -1358,7 +1427,7 @@ export const MENU_ITEMS = [
     price: 400,
     isVeg: false,
     description: "100% tender boneless chicken strips fried to gold perfection.",
-    popular: false
+    popular: true
   },
   {
     id: "crp-4",
@@ -1704,13 +1773,14 @@ export const MENU_ITEMS = [
     isVeg: true,
     variants: [
       { name: "Half Portion",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/delhi_special_dal_makhni.jpg", price: 170 },
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/delhi_special_dal_makhni.jpg", price: 170,
+    popular: true
+  },
       { name: "Full Portion",
     image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/delhi_special_dal_makhni.jpg", price: 280 }
     ],
     basePrice: 170,
-    description: "Slow-cooked black lentils overnight with white butter & cream.",
-    popular: false
+    description: "Slow-cooked black lentils overnight with white butter & cream."
   },
   {
     id: "mc-v-2",
@@ -1720,13 +1790,14 @@ export const MENU_ITEMS = [
     isVeg: true,
     variants: [
       { name: "Half Portion",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/delhi_special_dal_makhni.jpg", price: 170 },
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/delhi_special_dal_makhni.jpg", price: 170,
+    popular: false
+  },
       { name: "Full Portion",
     image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/delhi_special_dal_makhni.jpg", price: 280 }
     ],
     basePrice: 170,
-    description: "Yellow arhar dal tempered twice with garlic, cumin & desi ghee.",
-    popular: false
+    description: "Yellow arhar dal tempered twice with garlic, cumin & desi ghee."
   },
   {
     id: "mc-v-3",
@@ -1736,13 +1807,14 @@ export const MENU_ITEMS = [
     isVeg: true,
     variants: [
       { name: "Half Portion",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shahi_paneer.jpg", price: 220 },
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shahi_paneer.jpg", price: 220,
+    popular: false
+  },
       { name: "Full Portion",
     image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shahi_paneer.jpg", price: 350 }
     ],
     basePrice: 220,
-    description: "Royal cottage cheese cubes in rich almond-cashew tomato gravy.",
-    popular: false
+    description: "Royal cottage cheese cubes in rich almond-cashew tomato gravy."
   },
   {
     id: "mc-v-4",
@@ -1752,13 +1824,14 @@ export const MENU_ITEMS = [
     isVeg: true,
     variants: [
       { name: "Half Portion",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shahi_paneer.jpg", price: 240 },
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shahi_paneer.jpg", price: 240,
+    popular: true
+  },
       { name: "Full Portion",
     image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shahi_paneer.jpg", price: 360 }
     ],
     basePrice: 240,
-    description: "Velvety spiced tomato gravy enriched with fresh butter.",
-    popular: false
+    description: "Velvety spiced tomato gravy enriched with fresh butter."
   },
   {
     id: "mc-v-5",
@@ -1768,13 +1841,14 @@ export const MENU_ITEMS = [
     isVeg: true,
     variants: [
       { name: "Half Portion",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shahi_paneer.jpg", price: 240 },
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shahi_paneer.jpg", price: 240,
+    popular: false
+  },
       { name: "Full Portion",
     image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shahi_paneer.jpg", price: 360 }
     ],
     basePrice: 240,
-    description: "Wok-cooked cottage cheese with coarsely ground coriander and capsicum.",
-    popular: false
+    description: "Wok-cooked cottage cheese with coarsely ground coriander and capsicum."
   },
   {
     id: "mc-v-6",
@@ -1784,13 +1858,14 @@ export const MENU_ITEMS = [
     isVeg: true,
     variants: [
       { name: "Half Portion",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shahi_paneer.jpg", price: 240 },
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shahi_paneer.jpg", price: 240,
+    popular: false
+  },
       { name: "Full Portion",
     image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shahi_paneer.jpg", price: 360 }
     ],
     basePrice: 240,
-    description: "Rich white gravy seasoned with cracked black pepper.",
-    popular: false
+    description: "Rich white gravy seasoned with cracked black pepper."
   },
   {
     id: "mc-v-7",
@@ -1800,13 +1875,14 @@ export const MENU_ITEMS = [
     isVeg: true,
     variants: [
       { name: "Half Portion",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/rara_paneer.jpg", price: 250 },
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/rara_paneer.jpg", price: 250,
+    popular: false
+  },
       { name: "Full Portion",
     image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/rara_paneer.jpg", price: 400 }
     ],
     basePrice: 250,
-    description: "Minced paneer gravy combined with cottage cheese cubes.",
-    popular: false
+    description: "Minced paneer gravy combined with cottage cheese cubes."
   },
   {
     id: "mc-v-8",
@@ -1816,13 +1892,14 @@ export const MENU_ITEMS = [
     isVeg: true,
     variants: [
       { name: "Half Portion",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shahi_paneer.jpg", price: 250 },
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shahi_paneer.jpg", price: 250,
+    popular: false
+  },
       { name: "Full Portion",
     image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shahi_paneer.jpg", price: 400 }
     ],
     basePrice: 250,
-    description: "Kashmiri red chilly infused gravy with cottage cheese.",
-    popular: false
+    description: "Kashmiri red chilly infused gravy with cottage cheese."
   },
   {
     id: "mc-v-9",
@@ -1832,13 +1909,14 @@ export const MENU_ITEMS = [
     isVeg: true,
     variants: [
       { name: "Half Portion",
-    image: null, price: 180 },
+    image: null, price: 180,
+    popular: false
+  },
       { name: "Full Portion",
     image: null, price: 320 }
     ],
     basePrice: 180,
-    description: "Street-style griddle fried spicy chaap masala gravy.",
-    popular: false
+    description: "Street-style griddle fried spicy chaap masala gravy."
   },
   {
     id: "mc-v-10",
@@ -1848,13 +1926,14 @@ export const MENU_ITEMS = [
     isVeg: true,
     variants: [
       { name: "Half Portion",
-    image: null, price: 180 },
+    image: null, price: 180,
+    popular: false
+  },
       { name: "Full Portion",
     image: null, price: 320 }
     ],
     basePrice: 180,
-    description: "Spiced soya chaap cooked in traditional Kadhai gravy.",
-    popular: false
+    description: "Spiced soya chaap cooked in traditional Kadhai gravy."
   },
   {
     id: "mc-v-11",
@@ -1864,13 +1943,14 @@ export const MENU_ITEMS = [
     isVeg: true,
     variants: [
       { name: "Half Portion",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/kali_mirch_tikka.png", price: 200 },
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/kali_mirch_tikka.png", price: 200,
+    popular: false
+  },
       { name: "Full Portion",
     image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/kali_mirch_tikka.png", price: 350 }
     ],
     basePrice: 200,
-    description: "Creamy black pepper gravy soya chaap.",
-    popular: false
+    description: "Creamy black pepper gravy soya chaap."
   },
   {
     id: "mc-v-12",
@@ -1880,13 +1960,14 @@ export const MENU_ITEMS = [
     isVeg: true,
     variants: [
       { name: "Half Portion",
-    image: null, price: 200 },
+    image: null, price: 200,
+    popular: false
+  },
       { name: "Full Portion",
     image: null, price: 350 }
     ],
     basePrice: 200,
-    description: "Rich buttery tomato gravy with tender soya chaap.",
-    popular: false
+    description: "Rich buttery tomato gravy with tender soya chaap."
   },
   {
     id: "mc-v-13",
@@ -1896,13 +1977,14 @@ export const MENU_ITEMS = [
     isVeg: true,
     variants: [
       { name: "Half Portion",
-    image: null, price: 220 },
+    image: null, price: 220,
+    popular: false
+  },
       { name: "Full Portion",
     image: null, price: 370 }
     ],
     basePrice: 220,
-    description: "Thick coarse spiced gravy with soft soya chaap.",
-    popular: false
+    description: "Thick coarse spiced gravy with soft soya chaap."
   },
   {
     id: "mc-v-14",
@@ -1912,13 +1994,14 @@ export const MENU_ITEMS = [
     isVeg: true,
     variants: [
       { name: "Half Portion",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shahi_paneer.jpg", price: 250 },
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shahi_paneer.jpg", price: 250,
+    popular: false
+  },
       { name: "Full Portion",
     image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shahi_paneer.jpg", price: 400 }
     ],
     basePrice: 250,
-    description: "Plant-based minced keema cooked in Delhi spices.",
-    popular: false
+    description: "Plant-based minced keema cooked in Delhi spices."
   },
 
   // 23. MAIN COURSE (NON-VEG)
@@ -1930,13 +2013,14 @@ export const MENU_ITEMS = [
     isVeg: false,
     variants: [
       { name: "Half Portion",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shahi_paneer.jpg", price: 400 },
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shahi_paneer.jpg", price: 400,
+    popular: false
+  },
       { name: "Full Portion",
     image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shahi_paneer.jpg", price: 780 }
     ],
     basePrice: 400,
-    description: "Homestyle aromatic onion-tomato home cooked style chicken curry.",
-    popular: false
+    description: "Homestyle aromatic onion-tomato home cooked style chicken curry."
   },
   {
     id: "mc-nv-2",
@@ -1945,12 +2029,13 @@ export const MENU_ITEMS = [
     isVeg: false,
     image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/butter_chicken_with_1_paratha.jpg",
     variants: [
-      { name: "Half Portion", price: 440 },
+      { name: "Half Portion", price: 440,
+    popular: true
+  },
       { name: "Full Portion", price: 800 }
     ],
     basePrice: 440,
-    description: "Iconic Delhi style charcoal tandoori chicken simmered in velvet butter gravy.",
-    popular: false
+    description: "Iconic Delhi style charcoal tandoori chicken simmered in velvet butter gravy."
   },
   {
     id: "mc-nv-3",
@@ -1960,13 +2045,14 @@ export const MENU_ITEMS = [
     isVeg: false,
     variants: [
       { name: "Half Portion",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shahi_paneer.jpg", price: 440 },
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shahi_paneer.jpg", price: 440,
+    popular: false
+  },
       { name: "Full Portion",
     image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shahi_paneer.jpg", price: 800 }
     ],
     basePrice: 440,
-    description: "Wok-cooked chicken with whole coriander seeds, onions and capsicum.",
-    popular: false
+    description: "Wok-cooked chicken with whole coriander seeds, onions and capsicum."
   },
   {
     id: "mc-nv-4",
@@ -1976,13 +2062,14 @@ export const MENU_ITEMS = [
     isVeg: false,
     variants: [
       { name: "Half Portion",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shahi_paneer.jpg", price: 500 },
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shahi_paneer.jpg", price: 500,
+    popular: false
+  },
       { name: "Full Portion",
     image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shahi_paneer.jpg", price: 800 }
     ],
     basePrice: 500,
-    description: "Earthen pot dum-cooked slow simmered spiced chicken gravy.",
-    popular: false
+    description: "Earthen pot dum-cooked slow simmered spiced chicken gravy."
   },
   {
     id: "mc-nv-5",
@@ -1992,13 +2079,14 @@ export const MENU_ITEMS = [
     isVeg: false,
     variants: [
       { name: "Half Portion",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shahi_paneer.jpg", price: 440 },
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shahi_paneer.jpg", price: 440,
+    popular: false
+  },
       { name: "Full Portion",
     image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shahi_paneer.jpg", price: 800 }
     ],
     basePrice: 440,
-    description: "Crushed black pepper & cashew cream rich white gravy chicken.",
-    popular: false
+    description: "Crushed black pepper & cashew cream rich white gravy chicken."
   },
   {
     id: "mc-nv-6",
@@ -2008,13 +2096,14 @@ export const MENU_ITEMS = [
     isVeg: false,
     variants: [
       { name: "Half Portion",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shahi_paneer.jpg", price: 450 },
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shahi_paneer.jpg", price: 450,
+    popular: true
+  },
       { name: "Full Portion",
     image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shahi_paneer.jpg", price: 800 }
     ],
     basePrice: 450,
-    description: "Chicken pieces simmered in rich spiced chicken keema gravy.",
-    popular: false
+    description: "Chicken pieces simmered in rich spiced chicken keema gravy."
   },
   {
     id: "mc-nv-7",
@@ -2024,13 +2113,14 @@ export const MENU_ITEMS = [
     isVeg: false,
     variants: [
       { name: "Half Portion",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shahi_paneer.jpg", price: 450 },
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shahi_paneer.jpg", price: 450,
+    popular: false
+  },
       { name: "Full Portion",
     image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shahi_paneer.jpg", price: 800 }
     ],
     basePrice: 450,
-    description: "Aromatic Kashmiri chilli red gravy chicken curry.",
-    popular: false
+    description: "Aromatic Kashmiri chilli red gravy chicken curry."
   },
   {
     id: "mc-nv-8",
@@ -2040,13 +2130,14 @@ export const MENU_ITEMS = [
     isVeg: false,
     variants: [
       { name: "Half Portion",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shahi_paneer.jpg", price: 450 },
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shahi_paneer.jpg", price: 450,
+    popular: false
+  },
       { name: "Full Portion",
     image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/shahi_paneer.jpg", price: 800 }
     ],
     basePrice: 450,
-    description: "Rich malai cream gravy with mild green cardamom notes.",
-    popular: false
+    description: "Rich malai cream gravy with mild green cardamom notes."
   },
 
   // 24. MWS SPECIALS
