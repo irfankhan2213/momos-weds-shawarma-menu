@@ -558,7 +558,7 @@ export default function CustomerMenuPage() {
 
       {/* FLOATING CALL BUTTON */}
       <a
-        href={`tel:${RESTAURANT_INFO.phones[0]}`}
+        href={`tel:${RESTAURANT_INFO.phones[0].replace(/\s+/g, '')}`}
         className="fixed-call-fab"
         title="Call Momo Weds Shawarma Dugri"
       >

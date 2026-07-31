@@ -1,10 +1,10 @@
 export const RESTAURANT_INFO = {
   name: "Momo Weds Shawarma",
   tagline: "Delhi's Authentic Shawarmas, Kathi Rolls, Dumplings & Street Delights",
-  rating: "3.7",
+  rating: "4.5",
   ratingCount: "Zomato Verified",
-  phones: ["8389130000", "8669400000", "9779593096"],
-  whatsapp: "918389130000",
+  phones: ["+91 97795 93095", "+91 99159 77605"],
+  whatsapp: "919779593095",
   address: "Booth 71C, B-28-1402/71, Urban Estate, Phase 2, Dugri, Ludhiana",
   shortAddress: "Booth 71C, Phase 2, Dugri, Ludhiana",
   timing: "4:00 PM - 3:00 AM",
