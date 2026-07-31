@@ -175,7 +175,7 @@ export const MENU_ITEMS = [
   },
   {
     id: "shw-nv-2",
-    name: "Flavoured Chicken Shawarma",
+    name: "Afghani Chicken Shawarma",
     image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/flavoured_chicken_shawarma.jpg",
     category: "shawarma-nonveg",
     price: 140,
@@ -283,7 +283,7 @@ export const MENU_ITEMS = [
     price: 220,
     isVeg: true,
     description: "Rich cream and cashew marinated soya chaap wrapped in soft Rumali.",
-    popular: true
+    popular: false
   },
   {
     id: "rum-v-3",
@@ -579,7 +579,7 @@ export const MENU_ITEMS = [
     price: 250,
     isVeg: false,
     description: "Deep fried crunch chicken tenders loaded in Kathi wrap.",
-    popular: true
+    popular: false
   },
   {
     id: "kat-nv-10",
@@ -921,7 +921,7 @@ export const MENU_ITEMS = [
   },
   {
     id: "tan-v-2",
-    name: "Afghani Chaap",
+    name: "Tandoori Malai Chaap",
     image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/afghani_chaap_roll.jpg",
     category: "tandoori-veg",
     price: 230,
@@ -1421,7 +1421,7 @@ export const MENU_ITEMS = [
   },
   {
     id: "crp-3",
-    name: "MWS Crispy Boneless",
+    name: "Fried Chicken",
     image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/peri_peri_chicken_popcorn.png",
     category: "crispy-chicken",
     price: 400,
