@@ -178,7 +178,7 @@ export const MENU_ITEMS = [
     name: "Afghani Chicken Shawarma",
     image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/flavoured_chicken_shawarma.jpg",
     category: "shawarma-nonveg",
-    price: 140,
+    price: 170,
     isVeg: false,
     description: "Tangy spices drizzled over succulent roasted chicken shawarma slices.",
     popular: true
