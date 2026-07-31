@@ -236,7 +236,7 @@ export const MENU_ITEMS = [
   {
     id: "shw-nv-8",
     name: "Special Egg Shawarma",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/classic_chicken_shawarma.jpg",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/special_egg_shawarma.png",
     category: "shawarma-nonveg",
     price: 160,
     isVeg: false,
@@ -246,7 +246,7 @@ export const MENU_ITEMS = [
   {
     id: "shw-nv-9",
     name: "Special Egg Kabab Shawarma",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/classic_chicken_shawarma.jpg",
+    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/special_egg_kabab_shawarma.png",
     category: "shawarma-nonveg",
     price: 230,
     isVeg: false,
