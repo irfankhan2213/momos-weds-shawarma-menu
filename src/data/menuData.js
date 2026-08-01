@@ -79,19 +79,13 @@ export const CATEGORIES = [
   { id: "sandwich", name: "Sandwich", icon: "Sandwich",
     popular: false
   },
-  { id: "wraps", name: "Wraps", icon: "Wrap",
-    popular: false
-  },
-  { id: "main-veg", name: "Main Course (Veg)", icon: "Soup",
+    { id: "main-veg", name: "Main Course (Veg)", icon: "Soup",
     popular: false
   },
   { id: "main-nonveg", name: "Main Course (Non-Veg)", icon: "Soup",
     popular: false
   },
-  { id: "mws-specials", name: "MWS Specials", icon: "Crown",
-    popular: false
-  },
-  { id: "breads", name: "Breads", icon: "Cookie",
+    { id: "breads", name: "Breads", icon: "Cookie",
     popular: false
   },
   { id: "cold-coffee", name: "Cold Coffee", icon: "Cookie" },
@@ -1727,47 +1721,7 @@ export const MENU_ITEMS = [
   },
 
   // 21. WRAPS
-  {
-    id: "wrp-1",
-    name: "The Melted Mushroom Wrap",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/malai_paneer_roll.jpg",
-    category: "wraps",
-    price: 200,
-    isVeg: true,
-    description: "Garlic butter sautéed mushrooms with oozing cheese sauce wrap.",
-    popular: false
-  },
-  {
-    id: "wrp-2",
-    name: "The Melted Paneer Wrap",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/paneer_tikka_roll.jpg",
-    category: "wraps",
-    price: 220,
-    isVeg: true,
-    description: "Warm tortilla stuffed with grilled paneer and double cheese dip.",
-    popular: false
-  },
-  {
-    id: "wrp-3",
-    name: "The Melted Chicken Wrap",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/crispy_chicken_roll.jpg",
-    category: "wraps",
-    price: 250,
-    isVeg: false,
-    description: "Grilled spiced chicken soaked in warm melted cheese wrap.",
-    popular: false
-  },
-  {
-    id: "wrp-4",
-    name: "Peri Peri Chicken Wrap",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/butter_chicken_roll.jpg",
-    category: "wraps",
-    price: 250,
-    isVeg: false,
-    description: "Fiery peri peri spiced chicken tender wrap.",
-    popular: false
-  },
-
+        
   // 22. MAIN COURSE (VEG)
   {
     id: "mc-v-1",
@@ -2145,47 +2099,7 @@ export const MENU_ITEMS = [
   },
 
   // 24. MWS SPECIALS
-  {
-    id: "spc-1",
-    name: "Veg Keema Naan with Gravy",
-    image: null,
-    category: "mws-specials",
-    price: 280,
-    isVeg: true,
-    description: "Stuffed soya keema naan served with rich spicy gravy.",
-    popular: false
-  },
-  {
-    id: "spc-2",
-    name: "Veg Keema Ricebowl",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/wok_tossed_fried_rice.jpg",
-    category: "mws-specials",
-    price: 250,
-    isVeg: true,
-    description: "Flavoured basmati rice topped with spiced soya keema gravy.",
-    popular: false
-  },
-  {
-    id: "spc-3",
-    name: "Chicken Naan with Gravy",
-    image: null,
-    category: "mws-specials",
-    price: 300,
-    isVeg: false,
-    description: "Clay-oven baked naan stuffed with minced chicken, served with butter gravy.",
-    popular: false
-  },
-  {
-    id: "spc-4",
-    name: "Chicken Keema Ricebowl",
-    image: "https://rmdgcebtrgbddlvuxsod.supabase.co/storage/v1/object/public/dishes/chef_special_chicken_egg_fried_rice.jpg",
-    category: "mws-specials",
-    price: 270,
-    isVeg: false,
-    description: "Aromatic basmati rice topped with hearty chicken keema gravy.",
-    popular: false
-  },
-
+        
   // 25. BREADS
   {
     id: "brd-1",
