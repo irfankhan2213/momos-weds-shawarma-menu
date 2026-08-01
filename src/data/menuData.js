@@ -93,7 +93,11 @@ export const CATEGORIES = [
   },
   { id: "breads", name: "Breads", icon: "Cookie",
     popular: false
-  }
+  },
+  { id: "cold-coffee", name: "Cold Coffee", icon: "Cookie" },
+  { id: "sweet-shakes", name: "Sweet Wedding Shakes", icon: "Sparkles" },
+  { id: "fresh-mojitos", name: "Fresh & Fizzy Mojitos", icon: "Sparkles" },
+  { id: "frozen-slushers", name: "Frozen Slushers", icon: "Sparkles" }
 ];
 
 export const MENU_ITEMS = [
@@ -2331,6 +2335,278 @@ export const MENU_ITEMS = [
     price: 40,
     isVeg: true,
     description: "Spiced potato and herb stuffed golden tandoori kulcha.",
+    popular: false
+  },
+
+  // DRINKS & BEVERAGES
+  {
+    id: "drk-cc-1",
+    name: "Classic Cold Coffee",
+    image: null,
+    category: "cold-coffee",
+    price: 100,
+    isVeg: true,
+    description: "Classic chilled coffee blended with milk and ice for a rich refreshing brew.",
+    popular: false
+  },
+  {
+    id: "drk-cc-2",
+    name: "Hazelnut Frost",
+    image: null,
+    category: "cold-coffee",
+    price: 120,
+    isVeg: true,
+    description: "Rich cold coffee infused with sweet aromatic hazelnut flavor.",
+    popular: false
+  },
+  {
+    id: "drk-cc-3",
+    name: "Caramel Cream Chill",
+    image: null,
+    category: "cold-coffee",
+    price: 120,
+    isVeg: true,
+    description: "Smooth cold coffee drizzled with golden buttery caramel syrup.",
+    popular: false
+  },
+  {
+    id: "drk-cc-4",
+    name: "MWS Signature Brew",
+    image: null,
+    category: "cold-coffee",
+    price: 130,
+    isVeg: true,
+    description: "Our house special signature cold coffee blend crafted for coffee lovers.",
+    popular: false
+  },
+  {
+    id: "drk-sh-1",
+    name: "Mango Magic",
+    image: null,
+    category: "sweet-shakes",
+    price: 130,
+    isVeg: true,
+    description: "Luscious mango shake made with sweet mango pulp and chilled milk.",
+    popular: false
+  },
+  {
+    id: "drk-sh-2",
+    name: "Strawberry Bliss",
+    image: null,
+    category: "sweet-shakes",
+    price: 130,
+    isVeg: true,
+    description: "Sweet strawberry shake blended smoothly with creamy ice cream.",
+    popular: false
+  },
+  {
+    id: "drk-sh-3",
+    name: "Butterscotch Delight",
+    image: null,
+    category: "sweet-shakes",
+    price: 130,
+    isVeg: true,
+    description: "Rich butterscotch shake topped with crunchy butterscotch bits.",
+    popular: false
+  },
+  {
+    id: "drk-sh-4",
+    name: "Berrylicious",
+    image: null,
+    category: "sweet-shakes",
+    price: 130,
+    isVeg: true,
+    description: "Mixed berry shake bursting with sweet and tangy berry goodness.",
+    popular: false
+  },
+  {
+    id: "drk-sh-5",
+    name: "Bubblegum Shake",
+    image: null,
+    category: "sweet-shakes",
+    price: 130,
+    isVeg: true,
+    description: "Fun and nostalgic sweet bubblegum flavored thick shake.",
+    popular: false
+  },
+  {
+    id: "drk-sh-6",
+    name: "Blueberry Oreo Shake",
+    image: null,
+    category: "sweet-shakes",
+    price: 130,
+    isVeg: true,
+    description: "Delicious fusion of fruity blueberry and crunchy chocolate Oreo cookies.",
+    popular: false
+  },
+  {
+    id: "drk-sh-7",
+    name: "Oreo Shake",
+    image: null,
+    category: "sweet-shakes",
+    price: 130,
+    isVeg: true,
+    description: "Classic thick milkshake loaded with crushed Oreo cookies.",
+    popular: false
+  },
+  {
+    id: "drk-sh-8",
+    name: "Kitkat Shake",
+    image: null,
+    category: "sweet-shakes",
+    price: 130,
+    isVeg: true,
+    description: "Chocolatey thick shake blended with crisp KitKat wafer bars.",
+    popular: false
+  },
+  {
+    id: "drk-mo-1",
+    name: "Lemon Zing Soda",
+    image: null,
+    category: "fresh-mojitos",
+    price: 80,
+    isVeg: true,
+    description: "A bubbly mix of fresh lemon and soda delivering a cool citrus refresh.",
+    popular: false
+  },
+  {
+    id: "drk-mo-2",
+    name: "Minted Majesty",
+    image: null,
+    category: "fresh-mojitos",
+    price: 100,
+    isVeg: true,
+    description: "Fresh mint, lime, and fizzy soda come together in a refreshing sip that was mint to be.",
+    popular: false
+  },
+  {
+    id: "drk-mo-3",
+    name: "Blueberry Wave Fizz",
+    image: null,
+    category: "fresh-mojitos",
+    price: 120,
+    isVeg: true,
+    description: "A vibrant mix of blueberry, lemon, mint and sparkling soda with a bright citrusy burst.",
+    popular: false
+  },
+  {
+    id: "drk-mo-4",
+    name: "Berry In Love",
+    image: null,
+    category: "fresh-mojitos",
+    price: 120,
+    isVeg: true,
+    description: "Fresh strawberries, mint, and lime topped with sparkling soda — a sweet sip made for love.",
+    popular: false
+  },
+  {
+    id: "drk-mo-5",
+    name: "Minty Melon Splash",
+    image: null,
+    category: "fresh-mojitos",
+    price: 120,
+    isVeg: true,
+    description: "Juicy watermelon blended with fresh mint, lime, and sparkling soda for a super refreshing summer sip.",
+    popular: false
+  },
+  {
+    id: "drk-mo-6",
+    name: "Mango Tango Mojito",
+    image: null,
+    category: "fresh-mojitos",
+    price: 120,
+    isVeg: true,
+    description: "Sweet mango crush mixed with fresh mint, zesty lime, and sparkling soda for a tropical dance of flavors.",
+    popular: false
+  },
+  {
+    id: "drk-mo-7",
+    name: "Chilli Mango Splash",
+    image: null,
+    category: "fresh-mojitos",
+    price: 120,
+    isVeg: true,
+    description: "Sweet mango, mint, lime and a spicy chili kick - a tropical drink with a fiery twist.",
+    popular: false
+  },
+  {
+    id: "drk-mo-8",
+    name: "Bubblegum Breeze",
+    image: null,
+    category: "fresh-mojitos",
+    price: 120,
+    isVeg: true,
+    description: "Sweet bubblegum flavor blended with mint, lime, and sparkling soda for a fun refreshing drink.",
+    popular: false
+  },
+  {
+    id: "drk-sl-1",
+    name: "Berry Ice Blast",
+    image: null,
+    category: "frozen-slushers",
+    price: 120,
+    isVeg: true,
+    description: "Juicy strawberry flavors frozen into a vibrant slush for the ultimate summer chill.",
+    popular: false
+  },
+  {
+    id: "drk-sl-2",
+    name: "Watermelon Ice Burst",
+    image: null,
+    category: "frozen-slushers",
+    price: 120,
+    isVeg: true,
+    description: "Sweet watermelon crushed with ice for a chilled and refreshing summer drink.",
+    popular: false
+  },
+  {
+    id: "drk-sl-3",
+    name: "Tropical Mango Crush",
+    image: null,
+    category: "frozen-slushers",
+    price: 120,
+    isVeg: true,
+    description: "Juicy mango frozen into a smooth slush delivering a cool burst of tropical flavor.",
+    popular: false
+  },
+  {
+    id: "drk-sl-4",
+    name: "Spicy Mango Freeze",
+    image: null,
+    category: "frozen-slushers",
+    price: 120,
+    isVeg: true,
+    description: "Juicy mango frozen with crushed ice and a touch of chili for a sweet and fiery chill.",
+    popular: false
+  },
+  {
+    id: "drk-sl-5",
+    name: "Blueberry Chill",
+    image: null,
+    category: "frozen-slushers",
+    price: 120,
+    isVeg: true,
+    description: "Juicy blueberry flavors frozen with crushed ice for a vibrant and refreshing slush.",
+    popular: false
+  },
+  {
+    id: "drk-sl-6",
+    name: "Butterscotch Ice Bliss",
+    image: null,
+    category: "frozen-slushers",
+    price: 120,
+    isVeg: true,
+    description: "Butterscotch sweetness blended with ice creating a creamy and chilled delight.",
+    popular: false
+  },
+  {
+    id: "drk-sl-7",
+    name: "Bubblegum Blast",
+    image: null,
+    category: "frozen-slushers",
+    price: 120,
+    isVeg: true,
+    description: "Sweet bubblegum flavor blended with crushed ice for a fun and refreshing frozen treat.",
     popular: false
   }
 ];
