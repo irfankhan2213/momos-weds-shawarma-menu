@@ -627,175 +627,53 @@ export default function CustomerMenuPage() {
                 ))}
               </div>
 
-              {/* Checkout Input Form */}
-              <form onSubmit={handlePlaceOrder} style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-                {formError && (
-                  <div style={{ background: 'rgba(239, 68, 68, 0.15)', border: '1px solid rgba(239, 68, 68, 0.4)', color: '#EF4444', padding: '10px 14px', borderRadius: 8, fontSize: '0.85rem' }}>
-                    {formError}
-                  </div>
-                )}
+              {/* Total Amount & Waiter Notice */}
+              <div className="order-summary-line" style={{ marginTop: 16, paddingTop: 12, borderTop: '1px solid var(--border-dark)' }}>
+                <span>Total Estimated Amount</span>
+                <span style={{ color: 'var(--fire-red-light)', fontSize: '1.2rem', fontWeight: 800 }}>₹{cartSummary.totalPrice}</span>
+              </div>
 
-                <div>
-                  <label style={{ fontSize: '0.85rem', color: 'var(--text-sub)', display: 'block', marginBottom: 4 }}>Your Name *</label>
-                  <input
-                    type="text"
-                    required
-                    placeholder="Enter your full name"
-                    value={customerName}
-                    onChange={(e) => setCustomerName(e.target.value)}
-                    style={{ width: '100%', background: 'var(--bg-dark)', border: '1px solid var(--border-dark)', color: 'white', padding: '10px 14px', borderRadius: 8, fontSize: '0.9rem', outline: 'none' }}
-                  />
+              <div style={{
+                background: 'rgba(255, 183, 3, 0.1)',
+                border: '1px solid rgba(255, 183, 3, 0.3)',
+                color: '#FFB703',
+                padding: '16px',
+                borderRadius: 12,
+                textAlign: 'center',
+                marginTop: 16
+              }}>
+                <Clock size={24} style={{ margin: '0 auto 8px', color: '#FFB703' }} />
+                <div style={{ fontSize: '0.95rem', fontWeight: 700, marginBottom: 4 }}>
+                  Our waiter will take your order shortly.
                 </div>
-
-                <div>
-                  <label style={{ fontSize: '0.85rem', color: 'var(--text-sub)', display: 'block', marginBottom: 4 }}>Phone Number *</label>
-                  <input
-                    type="tel"
-                    required
-                    placeholder="Enter 10-digit mobile number"
-                    value={customerPhone}
-                    onChange={(e) => setCustomerPhone(e.target.value)}
-                    style={{ width: '100%', background: 'var(--bg-dark)', border: '1px solid var(--border-dark)', color: 'white', padding: '10px 14px', borderRadius: 8, fontSize: '0.9rem', outline: 'none' }}
-                  />
+                <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
+                  Please keep your selected items ready on screen for our captain.
                 </div>
+              </div>
 
-                <div>
-                  <label style={{ fontSize: '0.85rem', color: 'var(--text-sub)', display: 'block', marginBottom: 6 }}>Serving Location / Order Type *</label>
-                  <div style={{ display: 'flex', gap: 8, marginBottom: 8 }}>
-                    <button
-                      type="button"
-                      onClick={() => setOrderType('Car Drive-In')}
-                      style={{
-                        flex: 1,
-                        padding: '10px 6px',
-                        borderRadius: 8,
-                        border: orderType === 'Car Drive-In' ? '1px solid var(--fire-red-light)' : '1px solid var(--border-dark)',
-                        background: orderType === 'Car Drive-In' ? 'rgba(193, 18, 31, 0.25)' : 'var(--bg-dark)',
-                        color: orderType === 'Car Drive-In' ? 'white' : 'var(--text-muted)',
-                        fontWeight: 700,
-                        fontSize: '0.8rem',
-                        cursor: 'pointer',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        gap: 4
-                      }}
-                    >
-                      🚗 Car Drive-In
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => setOrderType('Dine In')}
-                      style={{
-                        flex: 1,
-                        padding: '10px 6px',
-                        borderRadius: 8,
-                        border: orderType === 'Dine In' ? '1px solid var(--fire-red-light)' : '1px solid var(--border-dark)',
-                        background: orderType === 'Dine In' ? 'rgba(193, 18, 31, 0.25)' : 'var(--bg-dark)',
-                        color: orderType === 'Dine In' ? 'white' : 'var(--text-muted)',
-                        fontWeight: 700,
-                        fontSize: '0.8rem',
-                        cursor: 'pointer',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        gap: 4
-                      }}
-                    >
-                      🍽 Dine In
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => setOrderType('Takeaway')}
-                      style={{
-                        flex: 1,
-                        padding: '10px 6px',
-                        borderRadius: 8,
-                        border: orderType === 'Takeaway' ? '1px solid var(--fire-red-light)' : '1px solid var(--border-dark)',
-                        background: orderType === 'Takeaway' ? 'rgba(193, 18, 31, 0.25)' : 'var(--bg-dark)',
-                        color: orderType === 'Takeaway' ? 'white' : 'var(--text-muted)',
-                        fontWeight: 700,
-                        fontSize: '0.8rem',
-                        cursor: 'pointer',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        gap: 4
-                      }}
-                    >
-                      🛍 Takeaway
-                    </button>
-                  </div>
-                </div>
-
-                {orderType === 'Car Drive-In' && (
-                  <div>
-                    <label style={{ fontSize: '0.85rem', color: 'var(--text-sub)', display: 'block', marginBottom: 4 }}>Car Number & Vehicle Details *</label>
-                    <input
-                      type="text"
-                      required
-                      placeholder="e.g. PB10 AB 1234 (White Swift)"
-                      value={carNumber}
-                      onChange={(e) => setCarNumber(e.target.value)}
-                      style={{ width: '100%', background: 'var(--bg-dark)', border: '1px solid var(--border-dark)', color: 'white', padding: '10px 14px', borderRadius: 8, fontSize: '0.9rem', outline: 'none' }}
-                    />
-                  </div>
-                )}
-
-                {orderType === 'Dine In' && (
-                  <div>
-                    <label style={{ fontSize: '0.85rem', color: 'var(--text-sub)', display: 'block', marginBottom: 4 }}>Table Number *</label>
-                    <input
-                      type="text"
-                      required
-                      placeholder="e.g. Table 4"
-                      value={tableNumber}
-                      onChange={(e) => setTableNumber(e.target.value)}
-                      style={{ width: '100%', background: 'var(--bg-dark)', border: '1px solid var(--border-dark)', color: 'white', padding: '10px 14px', borderRadius: 8, fontSize: '0.9rem', outline: 'none' }}
-                    />
-                  </div>
-                )}
-
-                <div>
-                  <label style={{ fontSize: '0.85rem', color: 'var(--text-sub)', display: 'block', marginBottom: 4 }}>Special Instructions / Notes (Optional)</label>
-                  <textarea
-                    rows={2}
-                    placeholder="Extra spicy, less oil, sauces on the side..."
-                    value={notes}
-                    onChange={(e) => setNotes(e.target.value)}
-                    style={{ width: '100%', background: 'var(--bg-dark)', border: '1px solid var(--border-dark)', color: 'white', padding: '10px 14px', borderRadius: 8, fontSize: '0.9rem', outline: 'none', resize: 'none' }}
-                  />
-                </div>
-
-                <div className="order-summary-line" style={{ marginTop: 8 }}>
-                  <span>Total Amount</span>
-                  <span style={{ color: 'var(--fire-red-light)' }}>₹{cartSummary.totalPrice}</span>
-                </div>
-
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    gap: 10,
-                    width: '100%',
-                    background: 'linear-gradient(135deg, var(--fire-red-light) 0%, var(--fire-red) 100%)',
-                    color: 'white',
-                    padding: '14px',
-                    borderRadius: 'var(--radius-full)',
-                    fontSize: '1rem',
-                    fontWeight: 800,
-                    border: 'none',
-                    cursor: isSubmitting ? 'not-allowed' : 'pointer',
-                    boxShadow: '0 6px 20px var(--fire-red-glow)',
-                    marginTop: 8
-                  }}
-                >
-                  {isSubmitting ? 'Submitting Order...' : '🚀 Confirm & Place Order'}
-                </button>
-              </form>
+              <button
+                type="button"
+                onClick={() => setIsCartOpen(false)}
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: 10,
+                  width: '100%',
+                  background: 'linear-gradient(135deg, var(--fire-red-light) 0%, var(--fire-red) 100%)',
+                  color: 'white',
+                  padding: '14px',
+                  borderRadius: 'var(--radius-full)',
+                  fontSize: '1rem',
+                  fontWeight: 800,
+                  border: 'none',
+                  cursor: 'pointer',
+                  boxShadow: '0 6px 20px var(--fire-red-glow)',
+                  marginTop: 16
+                }}
+              >
+                Close Summary
+              </button>
             </div>
           </div>
         </div>
